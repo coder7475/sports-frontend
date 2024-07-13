@@ -1,18 +1,31 @@
+// A navbar with logo and necessary menu items (e.g. All Products, Manage Products, Cart, About Us)
 import { Button } from "@/components/ui/button";
 
 const NavBar = () => {
   return (
     <nav className="flex justify-between items-center text-base">
-      <h2>accelPro</h2>
-      <ul className="flex justify-between w-[60%] items-center">
-        <li>lorem</li>
-        <li>jipsum</li>
-        <li>sajf</li>
-        <li>dsafdf</li>
-        <Button>
-          <CartIcon></CartIcon>
-        </Button>
+      <h2 className="text-3xl font-bold tracking-wider">
+        <a href="/">
+          Accel<span className="text-primary">P</span>ro
+        </a>
+      </h2>
+      <ul className="flex justify-center gap-20 items-center text-[16px]">
+        <li className="hover:font-bold">
+          <a href="/">Home</a>
+        </li>
+        <li className="hover:font-bold">
+          <a href="/">All Products</a>
+        </li>
+        <li className="hover:font-bold">
+          <a href="/">Manage Products</a>
+        </li>
+        <li className="hover:font-bold">
+          <a href="/">About Us</a>
+        </li>
       </ul>
+      <Button>
+        <CartIcon />
+      </Button>
     </nav>
   );
 };
