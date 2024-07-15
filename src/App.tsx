@@ -1,3 +1,4 @@
+import Banner from "./components/banner/banner";
 import Footer from "./components/footer/Footer";
 import NavBar from "./components/navbar/Navbar";
 
@@ -7,6 +8,7 @@ const App = () => {
       <section className="max-w-[1280px] mx-auto">
         <NavBar />
       </section>
+      <Banner />
       <section className="max-w-[1280px] mx-auto">
         <Footer />
       </section>
