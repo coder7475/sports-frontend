@@ -4,12 +4,14 @@ import NavBar from "./components/navbar/Navbar";
 
 const App = () => {
   return (
-    <main className="font-helve container mx-auto mt-3">
-      <section className="max-w-[1280px] mx-auto">
+    <main className="font-helve container mx-auto">
+      <section className="max-w-[1280px] mx-auto mt-3">
         <NavBar />
       </section>
-      <Banner />
-      <section className="max-w-[1280px] mx-auto">
+      <section className="container mx-auto mt-3">
+        <Banner />
+      </section>
+      <section className="max-w-[1280px] mx-auto mt-3">
         <Footer />
       </section>
     </main>
