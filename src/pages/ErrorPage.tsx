@@ -1,3 +1,4 @@
+import ErrorButton from "@/components/buttons/ErrorButton/ErrorButton";
 import { useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
@@ -13,6 +14,7 @@ const ErrorPage = () => {
       <p className="text-center text-xl font-semibold">
         Sorry, an unexpected error has occurred.
       </p>
+      <ErrorButton />
     </div>
   );
 };
