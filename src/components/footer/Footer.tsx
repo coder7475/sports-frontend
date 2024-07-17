@@ -116,7 +116,7 @@ const Footer = () => {
               <ul>
                 <li className="mb-2 leading-6">
                   <a
-                    href="javascript:void(0)"
+                    href="/about"
                     className="transition-colors duration-300 hover:text-primary focus:text-emerald-600"
                   >
                     About us

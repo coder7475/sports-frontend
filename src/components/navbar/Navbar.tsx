@@ -20,7 +20,7 @@ const NavBar = () => {
           <a href="/">Manage Products</a>
         </li>
         <li className="hover:font-bold">
-          <a href="/">About Us</a>
+          <a href="/about">About Us</a>
         </li>
       </ul>
       <Button>
