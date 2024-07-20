@@ -209,7 +209,10 @@ const Footer = () => {
         <div className="container px-6 mx-auto">
           <div className="grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12">
             <div className="col-span-2 md:col-span-4 lg:col-span-6 text-end">
-              © Copyright 2024 <span className="font-medium">AccelPro</span>
+              © Copyright 2024{" "}
+              <span className="font-bold ml-3 border-2 p-2 rounded-full">
+                AccelPro
+              </span>
             </div>
 
             <nav
