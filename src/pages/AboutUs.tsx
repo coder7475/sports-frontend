@@ -49,6 +49,32 @@ const AboutUs = () => {
             <span className="font-bold">Address:</span> Chittagong, Bangladesh
           </h3>
         </div>
+        <h2 className="text-5xl font-extrabold h-36 flex justify-center items-center">
+          Our Team
+        </h2>
+        <div className="flex flex-col lg:flex-row gap-2 justify-center items-center">
+          <div className="border-2 rounded-md">
+            <img src="/src/assets/preview.png" alt="" className="" />
+            <div className="text-center mt-2">
+              <h3 className="font-black text-lg">Robiul Hossain</h3>
+              <h4 className="font-semibold">CTO</h4>
+            </div>
+          </div>
+          <div className="border-2 rounded-md p-2">
+            <img src="/src/assets/preview.png" alt="" className="" />
+            <div className="text-center mt-4">
+              <h3 className="font-black text-lg">Robiul Hossain</h3>
+              <h4 className="font-semibold">CEO</h4>
+            </div>
+          </div>
+          <div className="border-2 rounded-md">
+            <img src="/src/assets/preview.png" alt="" className="" />
+            <div className="text-center mt-2">
+              <h3 className="font-black text-lg">Robiul Hossain</h3>
+              <h4 className="font-semibold">COO</h4>
+            </div>
+          </div>
+        </div>
       </section>
       <section className="max-w-[1280px] mx-auto mt-3">
         <Footer />
