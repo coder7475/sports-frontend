@@ -32,8 +32,22 @@ const AboutUs = () => {
         <hr className="w-[80%] mx-auto" />
         <br />
         <div className="text-xl tracking-wide font-bold mx-auto w-[80%] text-center flex justify-center items-center">
-          To be a global leader in sports goods, recognized for our quality,
+          We aim be a global leader in sports goods, recognized for our quality,
           innovation, and dedication to customer satisfaction.
+        </div>
+        <h2 className="text-5xl font-extrabold h-36 flex justify-center items-center">
+          Our Contact Information
+        </h2>
+        <div className="text-xl w-[80%] mx-auto text-center">
+          <h3>
+            <span className="font-bold">Email:</span> support@accelpro.io
+          </h3>
+          <h3>
+            <span className="font-bold">Phone:</span> +880-134-977-6358
+          </h3>
+          <h3>
+            <span className="font-bold">Address:</span> Chittagong, Bangladesh
+          </h3>
         </div>
       </section>
       <section className="max-w-[1280px] mx-auto mt-3">
