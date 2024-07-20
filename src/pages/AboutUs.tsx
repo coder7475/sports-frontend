@@ -11,7 +11,7 @@ const AboutUs = () => {
         <h2 className="text-5xl font-extrabold h-36 flex justify-center items-center">
           About Us
         </h2>
-        <p className="text-justify text-xl w-[80%] mx-auto font-medium">
+        <p className="text-justify text-xl w-[80%] mx-auto font-bold">
           AccetPro is a leading provider of premium sports goods, dedicated to
           enhancing the performance and experience of athletes at all levels.
           Since our founding, we have been committed to offering high-quality
@@ -20,13 +20,21 @@ const AboutUs = () => {
           for a wide variety of sports, all designed with the latest technology
           and highest standards of craftsmanship.
         </p>
-        <p>
-          Mission and Vision Statements Mission: To empower athletes with
-          innovative and reliable sports gear that enhances performance and
-          fosters a passion for sports. Vision: To be a global leader in sports
-          goods, recognized for our quality, innovation, and dedication to
-          customer satisfaction.
-        </p>
+
+        <h2 className="text-5xl font-extrabold h-36 flex justify-center items-center">
+          Mission and Vision Statements
+        </h2>
+        <div className="text-xl tracking-wider mx-auto text-center w-[80%] font-bold flex justify-center items-center">
+          Our Mission is to empower athletes with innovative and reliable sports
+          gear that enhances performance and fosters a passion for sports.
+        </div>
+        <br />
+        <hr className="w-[80%] mx-auto" />
+        <br />
+        <div className="text-xl tracking-wide font-bold mx-auto w-[80%] text-center flex justify-center items-center">
+          To be a global leader in sports goods, recognized for our quality,
+          innovation, and dedication to customer satisfaction.
+        </div>
       </section>
       <section className="max-w-[1280px] mx-auto mt-3">
         <Footer />
