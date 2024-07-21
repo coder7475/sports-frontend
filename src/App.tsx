@@ -1,6 +1,7 @@
 import Banner from "./components/banner/banner";
 import Footer from "./components/footer/Footer";
 import NavBar from "./components/navbar/Navbar";
+import FeaturedSection from "./pages/homepage/FeaturedSection";
 
 const App = () => {
   return (
@@ -10,6 +11,9 @@ const App = () => {
       </section>
       <section className="container mx-auto mt-3">
         <Banner />
+      </section>
+      <section className="max-w-[1280px] mx-auto mt-3">
+        <FeaturedSection />
       </section>
       <section className="max-w-[1280px] mx-auto mt-3">
         <Footer />
