@@ -5,7 +5,10 @@ const ContactUs = () => {
         Contact Us
       </h2>
       <form
-        action=""
+        onSubmit={(e) => {
+          e.preventDefault();
+          alert("Your Message is send successfully!");
+        }}
         className="border p-2 w-[50%] mx-auto flex flex-col gap-5 rounded-lg"
       >
         <EmailInput />
