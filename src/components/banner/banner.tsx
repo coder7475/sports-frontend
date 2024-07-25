@@ -15,14 +15,18 @@ const Banner = () => {
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="w-full"
+      className="w-full rounded-lg"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
-      <CarouselContent>
+      <CarouselContent className="rounded-lg">
         {images.map((imageLink, index) => (
           <CarouselItem key={index + 9999}>
-            <img src={imageLink} alt="" className="w-full h-screen" />
+            <img
+              src={imageLink}
+              alt=""
+              className="w-full h-screen rounded-lg"
+            />
           </CarouselItem>
         ))}
       </CarouselContent>
