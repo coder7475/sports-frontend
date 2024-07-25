@@ -17,7 +17,7 @@ const NavBar = () => {
           <a href="/">All Products</a>
         </li>
         <li className="hover:font-bold">
-          <a href="/">Manage Products</a>
+          <a href="/manage-products">Manage Products</a>
         </li>
         <li className="hover:font-bold">
           <a href="/about">About Us</a>

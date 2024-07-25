@@ -1,6 +1,7 @@
 import App from "@/App";
 import AboutUs from "@/pages/AboutUs";
 import ErrorPage from "@/pages/ErrorPage";
+import ManageProducts from "@/pages/ManageProducts";
 
 const routes = [
   {
@@ -11,6 +12,11 @@ const routes = [
   {
     path: "/about",
     element: <AboutUs />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/manage-products",
+    element: <ManageProducts />,
     errorElement: <ErrorPage />,
   },
 ];
