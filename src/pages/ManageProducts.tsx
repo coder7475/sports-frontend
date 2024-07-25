@@ -18,7 +18,7 @@ const ManageProducts = () => {
         <h1 className="text-3xl font-bold text-center pt-10">
           <section className="max-w-full" aria-multiselectable="false">
             <ul
-              className="flex items-center border-b border-yellow-200"
+              className="flex items-center border-b border-yell ow-200"
               role="tablist"
               ref={wrapperRef}
             >
@@ -42,7 +42,7 @@ const ManageProducts = () => {
                     setTabSelected({ ...tabSelected, currentTab: 1 })
                   }
                 >
-                  <span className="order-2 ">Tab 1</span>
+                  <span className="order-2 pt-1.5">ADD PRODUCT</span>
                   <span className="relative only:-mx-6">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -53,10 +53,8 @@ const ManageProducts = () => {
                       strokeWidth="1.5"
                       aria-labelledby="title-77a desc-77a"
                     >
-                      <title id="title-77a">Icon title</title>
-                      <desc id="desc-77a">
-                        A more detailed description of the icon
-                      </desc>
+                      <title id="title-77a">Add Product</title>
+                      <desc id="desc-77a">Creates New Products</desc>
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -86,7 +84,7 @@ const ManageProducts = () => {
                     setTabSelected({ ...tabSelected, currentTab: 2 })
                   }
                 >
-                  <span className="order-2 ">Tab 2</span>
+                  <span className="order-2 pt-1.5">UPDATE PRODUCT</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="hidden h-6 w-6 sm:block"
@@ -96,10 +94,8 @@ const ManageProducts = () => {
                     strokeWidth="1.5"
                     aria-labelledby="title-77b desc-77b"
                   >
-                    <title id="title-77b">Icon title</title>
-                    <desc id="desc-77b">
-                      A more detailed description of the icon
-                    </desc>
+                    <title id="title-77b">Update Product</title>
+                    <desc id="desc-77b">Update Existing Product</desc>
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -128,7 +124,7 @@ const ManageProducts = () => {
                     setTabSelected({ ...tabSelected, currentTab: 3 })
                   }
                 >
-                  <span className="order-2 ">Tab 3</span>
+                  <span className="order-2 pt-1.5">DELETE PRODUCT</span>
                   <span className="relative only:-mx-6">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -139,10 +135,8 @@ const ManageProducts = () => {
                       strokeWidth="1.5"
                       aria-labelledby="title-77c desc-77c"
                     >
-                      <title id="title-77c">Icon title</title>
-                      <desc id="desc-77c">
-                        A more detailed description of the icon
-                      </desc>
+                      <title id="title-77c">Delete Product</title>
+                      <desc id="desc-77c">Delete Existing Product</desc>
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
