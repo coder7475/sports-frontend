@@ -25,10 +25,10 @@ const ManageProducts = () => {
             >
               <li className="" role="presentation">
                 <button
-                  className={`-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-yellow-50 hover:stroke-card focus:bg-yellow-50 focus-visible:outline-none disabled:cursor-not-allowed ${
+                  className={`-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-card hover:stroke-card focus:bg-card focus-visible:outline-none disabled:cursor-not-allowed ${
                     tabSelected.currentTab === 1
-                      ? "border-yellow-500 stroke-yellow-500 text-yellow-500 hover:border-card  hover:text-card focus:border-primary focus:stroke-primary focus:text-black disabled:border-slate-500"
-                      : "justify-self-center border-transparent stroke-slate-700 text-slate-700 hover:border-yellow-500 hover:text-yellow-500 focus:border-card focus:stroke-card focus:text-card disabled:text-slate-500"
+                      ? "border-secondary stroke-secondary text-secondary hover:border-card  hover:text-card focus:border-primary focus:stroke-primary focus:text-primary disabled:border-slate-500"
+                      : "justify-self-center border-transparent stroke-slate-700 text-slate-700 hover:border-secondary hover:text-secondary focus:border-card focus:stroke-card focus:text-card disabled:text-slate-500"
                   }`}
                   id="tab-label-1ai"
                   role="tab"
@@ -67,10 +67,10 @@ const ManageProducts = () => {
               </li>
               <li className="" role="presentation">
                 <button
-                  className={`-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-yellow-50 hover:stroke-card focus:bg-yellow-50 focus-visible:outline-none disabled:cursor-not-allowed ${
+                  className={`-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-card hover:stroke-card focus:bg-card focus-visible:outline-none disabled:cursor-not-allowed ${
                     tabSelected.currentTab === 2
-                      ? "border-yellow-500 stroke-yellow-500 text-yellow-500 hover:border-card  hover:text-card focus:border-primary focus:stroke-primary focus:text-black disabled:border-slate-500"
-                      : "justify-self-center border-transparent stroke-slate-700 text-slate-700 hover:border-yellow-500 hover:text-yellow-500 focus:border-card focus:stroke-card focus:text-card disabled:text-slate-500"
+                      ? "border-secondary stroke-secondary text-secondary hover:border-card  hover:text-card focus:border-primary focus:stroke-primary focus:text-primary disabled:border-slate-500"
+                      : "justify-self-center border-transparent stroke-slate-700 text-slate-700 hover:border-secondary hover:text-secondary focus:border-card focus:stroke-card focus:text-card disabled:text-slate-500"
                   }`}
                   id="tab-label-2ai"
                   role="tab"
@@ -107,10 +107,10 @@ const ManageProducts = () => {
               </li>
               <li className="" role="presentation">
                 <button
-                  className={`-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-yellow-50 hover:stroke-card focus:bg-yellow-50 focus-visible:outline-none disabled:cursor-not-allowed ${
+                  className={`-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-card hover:stroke-card focus:bg-card focus-visible:outline-none disabled:cursor-not-allowed ${
                     tabSelected.currentTab === 3
-                      ? "border-yellow-500 stroke-yellow-500 text-yellow-500 hover:border-card  hover:text-card focus:border-primary focus:stroke-primary focus:text-black disabled:border-slate-500"
-                      : "justify-self-center border-transparent stroke-slate-700 text-slate-700 hover:border-yellow-500 hover:text-yellow-500 focus:border-card focus:stroke-card focus:text-card disabled:text-slate-500"
+                      ? "border-secondary stroke-secondary text-secondary hover:border-card  hover:text-card focus:border-primary focus:stroke-primary focus:text-primary disabled:border-slate-500"
+                      : "justify-self-center border-transparent stroke-slate-700 text-slate-700 hover:border-secondary hover:text-secondary focus:border-card focus:stroke-card focus:text-card disabled:text-slate-500"
                   }`}
                   id="tab-label-3ai"
                   role="tab"
