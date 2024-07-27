@@ -1,4 +1,5 @@
 import Footer from "@/components/footer/Footer";
+import AddProduct from "@/components/forms/AddProduct/AddProduct";
 import NavBar from "@/components/navbar/Navbar";
 import { useRef, useState } from "react";
 
@@ -165,12 +166,7 @@ const ManageProducts = () => {
                 aria-labelledby="tab-label-1ai"
                 tabIndex={-1}
               >
-                <p>
-                  What is the recipe for successful achievement? To my mind
-                  there are just four essential ingredients: Choose a career you
-                  love, give it the best there is in you, seize your
-                  opportunities, and be a member of the team.
-                </p>
+                <AddProduct />
               </div>
               <div
                 className={`px-6 py-4 ${
