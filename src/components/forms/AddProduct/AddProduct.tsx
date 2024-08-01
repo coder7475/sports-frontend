@@ -1,5 +1,5 @@
 const AddProduct = () => {
-  return <div>Form 1</div>;
+  return <ProductForm />;
 };
 
 export default AddProduct;
