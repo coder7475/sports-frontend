@@ -25,7 +25,7 @@ const Banner = () => {
             <img
               src={imageLink}
               alt=""
-              className="w-full h-screen rounded-lg"
+              className="w-full h-screen rounded-lg brightness-75"
             />
           </CarouselItem>
         ))}
