@@ -2,6 +2,9 @@ import Footer from "@/components/footer/Footer";
 import AddProduct from "@/components/forms/AddProduct/AddProduct";
 import NavBar from "@/components/navbar/Navbar";
 import { useRef, useState } from "react";
+import { IoMdAddCircle } from "react-icons/io";
+import { GrUpdate } from "react-icons/gr";
+import { MdAutoDelete } from "react-icons/md";
 
 const ManageProducts = () => {
   const [tabSelected, setTabSelected] = useState({
@@ -9,6 +12,7 @@ const ManageProducts = () => {
     noTabs: 3,
   });
   const wrapperRef = useRef(null);
+
   return (
     <main className="font-helve container mx-auto">
       <section className="max-w-[1280px] mx-auto mt-3">
@@ -45,23 +49,7 @@ const ManageProducts = () => {
                 >
                   <span className="order-2 pt-1.5">ADD PRODUCT</span>
                   <span className="relative only:-mx-6">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="hidden h-6 w-6 sm:block"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      aria-labelledby="title-77a desc-77a"
-                    >
-                      <title id="title-77a">Add Product</title>
-                      <desc id="desc-77a">Creates New Products</desc>
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                      />
-                    </svg>
+                    <IoMdAddCircle className="text-xl" />
                   </span>
                 </button>
               </li>
@@ -86,23 +74,7 @@ const ManageProducts = () => {
                   }
                 >
                   <span className="order-2 pt-1.5">UPDATE PRODUCT</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="hidden h-6 w-6 sm:block"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    aria-labelledby="title-77b desc-77b"
-                  >
-                    <title id="title-77b">Update Product</title>
-                    <desc id="desc-77b">Update Existing Product</desc>
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-                    />
-                  </svg>
+                  <GrUpdate className="text-xl" />
                 </button>
               </li>
               <li className="" role="presentation">
@@ -127,28 +99,7 @@ const ManageProducts = () => {
                 >
                   <span className="order-2 pt-1.5">DELETE PRODUCT</span>
                   <span className="relative only:-mx-6">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="hidden h-6 w-6 sm:block"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      aria-labelledby="title-77c desc-77c"
-                    >
-                      <title id="title-77c">Delete Product</title>
-                      <desc id="desc-77c">Delete Existing Product</desc>
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
-                      />
-                    </svg>
+                    <MdAutoDelete className="text-xl" />
                   </span>
                 </button>
               </li>
