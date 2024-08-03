@@ -23,7 +23,7 @@ const ManageProducts = () => {
         <h1 className="text-3xl font-bold text-center pt-10">
           <section className="max-w-full" aria-multiselectable="false">
             <ul
-              className="flex items-center border-b border-yell ow-200"
+              className="flex items-center border-b border-yellow-200"
               role="tablist"
               ref={wrapperRef}
             >
@@ -104,7 +104,7 @@ const ManageProducts = () => {
                 </button>
               </li>
             </ul>
-            <div className="">
+            <div className="w-full ">
               <div
                 className={`px-6 py-4 ${
                   tabSelected.currentTab === 1 ? "" : "hidden"

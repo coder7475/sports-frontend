@@ -27,21 +27,21 @@ const ProductForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-md mx-auto mt-8 space-y-6"
+      className="mx-auto rounded-lg mt-8 space-y-6 bg-card w-full"
     >
-      <div>
+      <div className="max-w-md mx-auto">
         <label
           htmlFor="name"
-          className="block text-base font-medium text-card-foreground"
+          className="block text-start text-lg font-semibold text-card-foreground"
         >
-          Name
+          Product Name{" "}
+          <input
+            type="text"
+            id="name"
+            {...register("name", { required: "Product Name is required" })}
+            className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+          />
         </label>
-        <input
-          type="text"
-          id="name"
-          {...register("name", { required: "Name is required" })}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-        />
         {errors.name && (
           <Alert variant="destructive">
             <AlertDescription>{errors.name.message}</AlertDescription>
