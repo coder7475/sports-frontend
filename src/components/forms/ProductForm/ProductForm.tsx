@@ -27,7 +27,7 @@ const ProductForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mx-auto px-4 rounded-lg mt-8 space-y-6 bg-card w-full"
+      className="mx-auto px-4 rounded-lg mt-2 space-y-6 bg-card w-full"
     >
       <div className="flex flex-col w-full lg:flex-row gap-4 px-8 pt-8">
         <div className="w-full">

@@ -1,12 +1,7 @@
 import ProductForm from "../ProductForm/ProductForm";
 
 const AddProduct = () => {
-  return (
-    <div>
-      <h2>Add Product</h2>
-      <ProductForm />
-    </div>
-  );
+  return <ProductForm />;
 };
 
 export default AddProduct;
