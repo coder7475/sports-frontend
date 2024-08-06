@@ -27,7 +27,7 @@ const ProductForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mx-auto rounded-lg mt-8 space-y-6 bg-card w-full"
+      className="mx-auto px-4 rounded-lg mt-8 space-y-6 bg-card w-full"
     >
       <div className="flex flex-col w-full lg:flex-row gap-4 px-8 pt-8">
         <div className="w-full">
@@ -71,127 +71,130 @@ const ProductForm = () => {
         </div>
       </div>
 
-      <div>
-        <label
-          htmlFor="quantity"
-          className="block text-base font-medium text-card-foreground"
-        >
-          Quantity
-        </label>
-        <input
-          type="number"
-          id="quantity"
-          {...register("quantity", {
-            required: "Quantity is required",
-            min: { value: 0, message: "Quantity must be positive" },
-          })}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-        />
-        {errors.quantity && (
-          <Alert variant="destructive">
-            <AlertDescription>{errors.quantity.message}</AlertDescription>
-          </Alert>
-        )}
+      <div className="flex flex-col w-full lg:flex-row gap-4 px-8 pt-2">
+        <div className="w-full">
+          <label
+            htmlFor="quantity"
+            className="block text-start text-lg font-semibold text-card-foreground"
+          >
+            Quantity{" "}
+            <input
+              type="number"
+              id="quantity"
+              {...register("quantity", {
+                required: "Quantity is required",
+                min: { value: 0, message: "Quantity must be positive" },
+              })}
+              className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+            />
+            {errors.quantity && (
+              <Alert variant="destructive">
+                <AlertDescription>{errors.quantity.message}</AlertDescription>
+              </Alert>
+            )}
+          </label>
+        </div>
+        <div className="w-full">
+          <label
+            htmlFor="category"
+            className="block text-start text-lg font-semibold text-card-foreground"
+          >
+            Category{" "}
+            <input
+              type="text"
+              id="category"
+              {...register("category", { required: "Category is required" })}
+              className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+            />
+            {errors.category && (
+              <Alert variant="destructive">
+                <AlertDescription>{errors.category.message}</AlertDescription>
+              </Alert>
+            )}
+          </label>
+        </div>
       </div>
 
-      <div>
-        <label
-          htmlFor="category"
-          className="block text-base font-medium text-card-foreground"
-        >
-          Category
-        </label>
-        <input
-          type="text"
-          id="category"
-          {...register("category", { required: "Category is required" })}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-        />
-        {errors.category && (
-          <Alert variant="destructive">
-            <AlertDescription>{errors.category.message}</AlertDescription>
-          </Alert>
-        )}
+      <div className="flex flex-col w-full lg:flex-row gap-4 px-8 pt-2">
+        <div className="w-full">
+          <label
+            htmlFor="rating"
+            className="block text-start text-lg font-semibold text-card-foreground"
+          >
+            Rating{" "}
+            <input
+              type="number"
+              id="rating"
+              {...register("rating", {
+                required: "Rating is required",
+                min: { value: 0, message: "Rating must be between 0 and 5" },
+                max: { value: 5, message: "Rating must be between 0 and 5" },
+              })}
+              className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+            />
+            {errors.rating && (
+              <Alert variant="destructive">
+                <AlertDescription>{errors.rating.message}</AlertDescription>
+              </Alert>
+            )}
+          </label>
+        </div>
+
+        <div className="w-full">
+          <label
+            htmlFor="price"
+            className="block text-start text-lg font-semibold text-card-foreground"
+          >
+            Price{" "}
+            <input
+              type="number"
+              id="price"
+              {...register("price", {
+                required: "Price is required",
+                min: { value: 0, message: "Price must be positive" },
+              })}
+              className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+            />
+            {errors.price && (
+              <Alert variant="destructive">
+                <AlertDescription>{errors.price.message}</AlertDescription>
+              </Alert>
+            )}
+          </label>
+        </div>
       </div>
 
-      <div>
-        <label
-          htmlFor="rating"
-          className="block text-base font-medium text-card-foreground"
-        >
-          Rating
-        </label>
-        <input
-          type="number"
-          id="rating"
-          {...register("rating", {
-            required: "Rating is required",
-            min: { value: 0, message: "Rating must be between 0 and 5" },
-            max: { value: 5, message: "Rating must be between 0 and 5" },
-          })}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-        />
-        {errors.rating && (
-          <Alert variant="destructive">
-            <AlertDescription>{errors.rating.message}</AlertDescription>
-          </Alert>
-        )}
-      </div>
-
-      <div>
-        <label
-          htmlFor="price"
-          className="block text-base font-medium text-card-foreground"
-        >
-          Price
-        </label>
-        <input
-          type="number"
-          id="price"
-          {...register("price", {
-            required: "Price is required",
-            min: { value: 0, message: "Price must be positive" },
-          })}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-        />
-        {errors.price && (
-          <Alert variant="destructive">
-            <AlertDescription>{errors.price.message}</AlertDescription>
-          </Alert>
-        )}
-      </div>
-
-      <div>
+      <div className="w-full px-8 pt-2">
         <label
           htmlFor="image"
-          className="block text-base font-medium text-card-foreground"
+          className="block text-start text-lg font-semibold text-card-foreground"
         >
-          Image URL
+          Image URL{" "}
+          <input
+            type="text"
+            id="image"
+            {...register("image", { required: "Image URL is required" })}
+            className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+          />
+          {errors.image && (
+            <Alert variant="destructive">
+              <AlertDescription>{errors.image.message}</AlertDescription>
+            </Alert>
+          )}
         </label>
-        <input
-          type="text"
-          id="image"
-          {...register("image", { required: "Image URL is required" })}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-        />
-        {errors.image && (
-          <Alert variant="destructive">
-            <AlertDescription>{errors.image.message}</AlertDescription>
-          </Alert>
-        )}
       </div>
 
-      <div>
+      <div className="w-full px-8 pt-2">
         <label
           htmlFor="description"
-          className="block text-base font-medium text-card-foreground"
+          className="block text-start text-lg font-semibold text-card-foreground"
         >
           Description
         </label>
         <textarea
           id="description"
           {...register("description", { required: "Description is required" })}
-          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
           rows={3}
         ></textarea>
         {errors.description && (
@@ -201,10 +204,10 @@ const ProductForm = () => {
         )}
       </div>
 
-      <div>
+      <div className="w-full px-8 pt-2 pb-12">
         <button
           type="submit"
-          className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-card bg-secondary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary hover:font-semibold"
+          className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-base font-semibold text-card bg-secondary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary hover:font-black"
         >
           Submit
         </button>
