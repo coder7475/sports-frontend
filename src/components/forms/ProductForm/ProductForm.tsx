@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { SelectScrollable } from "@/components/select/SelectScrollable";
 
 interface IProduct {
   name: string;
@@ -100,12 +101,12 @@ const ProductForm = () => {
             className="block text-start text-lg font-semibold text-card-foreground"
           >
             Category{" "}
-            <input
-              type="text"
-              id="category"
-              {...register("category", { required: "Category is required" })}
-              className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+            <SelectScrollable
+            // type="text"
+            // id="category"
+            // {...register("category", { required: "Category is required" })}
             />
+            {/* <input className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary" /> */}
             {errors.category && (
               <Alert variant="destructive">
                 <AlertDescription>{errors.category.message}</AlertDescription>
