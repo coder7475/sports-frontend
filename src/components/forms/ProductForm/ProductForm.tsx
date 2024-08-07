@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { SelectScrollable } from "@/components/select/SelectScrollable";
 
 interface IProduct {
   name: string;
@@ -98,15 +97,57 @@ const ProductForm = () => {
         <div className="w-full">
           <label
             htmlFor="category"
-            className="block text-start text-lg font-semibold text-card-foreground"
+            className="block text-start text-lg font-semibold text-card-foreground px-1"
           >
             Category{" "}
-            <SelectScrollable
-            // type="text"
-            // id="category"
-            // {...register("category", { required: "Category is required" })}
-            />
-            {/* <input className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary" /> */}
+            <select
+              id="category"
+              {...register("category", { required: "Category is required" })}
+              className="mt-1 text-black p-2 w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+            >
+              <option value="" disabled selected>
+                Select a Category
+              </option>
+              <optgroup label="Apparel and Footwear">
+                <option value="sportswear">Sportswear</option>
+                <option value="footwear">Footwear</option>
+                <option value="protective-gear">Protective Gear</option>
+              </optgroup>
+              <optgroup label="Equipment and Gear">
+                <option value="balls">Balls</option>
+                <option value="rackets-bats">Rackets and Bats</option>
+                <option value="clubs-sticks">Clubs and Sticks</option>
+                <option value="nets-goals">Nets and Goals</option>
+              </optgroup>
+              <optgroup label="Fitness and Exercise Equipment">
+                <option value="cardio-machines">Cardio Machines</option>
+                <option value="strength-training">
+                  Strength Training Equipment
+                </option>
+                <option value="yoga-pilates">Yoga and Pilates Gear</option>
+              </optgroup>
+              <optgroup label="Outdoor and Adventure Gear">
+                <option value="camping-equipment">Camping Equipment</option>
+                <option value="water-sports">Water Sports Equipment</option>
+                <option value="climbing-gear">Climbing Gear</option>
+              </optgroup>
+              <optgroup label="Accessories">
+                <option value="sports-bags">Sports Bags and Backpacks</option>
+                <option value="water-bottles">
+                  Water Bottles and Hydration Packs
+                </option>
+                <option value="fitness-trackers">
+                  Fitness Trackers and Smartwatches
+                </option>
+              </optgroup>
+              <optgroup label="Sports Nutrition and Wellness">
+                <option value="supplements">Supplements</option>
+                <option value="hydration-products">Hydration Products</option>
+                <option value="health-monitoring">
+                  Health Monitoring Devices
+                </option>
+              </optgroup>
+            </select>
             {errors.category && (
               <Alert variant="destructive">
                 <AlertDescription>{errors.category.message}</AlertDescription>
