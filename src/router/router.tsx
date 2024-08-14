@@ -19,6 +19,11 @@ const routes = [
     element: <ManageProducts />,
     errorElement: <ErrorPage />,
   },
+  {
+    path: "/all-products",
+    element: <div>All Products</div>,
+    errorElement: <ErrorPage />,
+  },
 ];
 
 export default routes;
