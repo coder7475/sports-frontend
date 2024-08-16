@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import Swal from "sweetalert2";
+import "@sweetalert2/theme-dark";
 
 interface IProduct {
   name: string;
