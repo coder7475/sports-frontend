@@ -1,54 +1,6 @@
-import { useForm } from "react-hook-form";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import Swal from "sweetalert2";
-import "@sweetalert2/theme-dark";
 
-interface IProduct {
-  name: string;
-  brand: string;
-  quantity: number;
-  category: string;
-  rating: number;
-  price: number;
-  image: string;
-  description: string;
-}
-
-const ProductForm = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<IProduct>();
-
-  const onSubmit = (data: IProduct) => {
-    // Handle form submission
-    // create a new product
-    fetch("http://localhost:5003/api/v1/products", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        if (json?.success) {
-          Swal.fire({
-            title: "Success",
-            text: "Product added successfully!",
-            icon: "success",
-          });
-        } else {
-          Swal.fire({
-            title: "Failed",
-            text: "Product addition failed!",
-            icon: "error",
-          });
-        }
-      });
-  };
-
+const ProductForm = ({ register, handleSubmit, onSubmit, errors }) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -64,7 +16,9 @@ const ProductForm = () => {
             <input
               type="text"
               id="name"
-              {...register("name", { required: "Product Name is required" })}
+              {...register("name", {
+                required: "Product Name is required",
+              })}
               className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
             />
           </label>
@@ -84,7 +38,9 @@ const ProductForm = () => {
             <input
               type="text"
               id="brand"
-              {...register("brand", { required: "Brand is required" })}
+              {...register("brand", {
+                required: "Brand is required",
+              })}
               className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
             />
           </label>
@@ -108,7 +64,10 @@ const ProductForm = () => {
               id="quantity"
               {...register("quantity", {
                 required: "Quantity is required",
-                min: { value: 0, message: "Quantity must be positive" },
+                min: {
+                  value: 0,
+                  message: "Quantity must be positive",
+                },
               })}
               className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
             />
@@ -127,7 +86,9 @@ const ProductForm = () => {
             Category{" "}
             <select
               id="category"
-              {...register("category", { required: "Category is required" })}
+              {...register("category", {
+                required: "Category is required",
+              })}
               className="mt-1 text-black p-2 w-full rounded-md bg-card-foreground border-primary focus:border-primary"
             >
               <option value="" disabled selected>
@@ -194,8 +155,14 @@ const ProductForm = () => {
               id="rating"
               {...register("rating", {
                 required: "Rating is required",
-                min: { value: 0, message: "Rating must be between 0 and 5" },
-                max: { value: 5, message: "Rating must be between 0 and 5" },
+                min: {
+                  value: 0,
+                  message: "Rating must be between 0 and 5",
+                },
+                max: {
+                  value: 5,
+                  message: "Rating must be between 0 and 5",
+                },
               })}
               className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
             />
@@ -218,7 +185,10 @@ const ProductForm = () => {
               id="price"
               {...register("price", {
                 required: "Price is required",
-                min: { value: 0, message: "Price must be positive" },
+                min: {
+                  value: 0,
+                  message: "Price must be positive",
+                },
               })}
               className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
             />
@@ -240,7 +210,9 @@ const ProductForm = () => {
           <input
             type="text"
             id="image"
-            {...register("image", { required: "Image URL is required" })}
+            {...register("image", {
+              required: "Image URL is required",
+            })}
             className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
           />
           {errors.image && (
@@ -260,7 +232,9 @@ const ProductForm = () => {
         </label>
         <textarea
           id="description"
-          {...register("description", { required: "Description is required" })}
+          {...register("description", {
+            required: "Description is required",
+          })}
           className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
           rows={3}
         ></textarea>
