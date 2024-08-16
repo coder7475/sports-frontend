@@ -20,8 +20,17 @@ const ProductForm = () => {
   } = useForm<IProduct>();
 
   const onSubmit = (data: IProduct) => {
-    console.log(data);
     // Handle form submission
+    // create a new product
+    fetch("http://localhost:5003/api/v1/products", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((res) => res.json())
+      .then((json) => console.log(json));
   };
 
   return (
