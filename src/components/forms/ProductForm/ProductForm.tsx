@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import Swal from "sweetalert2";
 
 interface IProduct {
   name: string;
@@ -30,7 +31,21 @@ const ProductForm = () => {
       },
     })
       .then((res) => res.json())
-      .then((json) => console.log(json));
+      .then((json) => {
+        if (json?.success) {
+          Swal.fire({
+            title: "Success",
+            text: "Product added successfully!",
+            icon: "success",
+          });
+        } else {
+          Swal.fire({
+            title: "Failed",
+            text: "Product addition failed!",
+            icon: "error",
+          });
+        }
+      });
   };
 
   return (
