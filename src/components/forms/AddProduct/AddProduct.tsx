@@ -2,17 +2,7 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import "@sweetalert2/theme-dark";
 import ProductForm from "../ProductForm/ProductForm";
-
-interface IProduct {
-  name: string;
-  brand: string;
-  quantity: number;
-  category: string;
-  rating: number;
-  price: number;
-  image: string;
-  description: string;
-}
+import { IProduct } from "@/interfaces/product.interface";
 
 const AddProduct = () => {
   const {
