@@ -14,7 +14,7 @@ const AddProduct = () => {
   const onSubmit = (data: IProduct) => {
     // Handle form submission
     // create a new product
-    fetch("http://localhost:5003/api/v1/products", {
+    fetch("http://188.245.99.15:5003/api/v1/products", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
