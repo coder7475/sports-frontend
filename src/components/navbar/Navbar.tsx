@@ -6,9 +6,9 @@ import { MyDropdownMenu } from "./dropdown/MyDropdownMenu";
 const NavBar = () => {
   return (
     <header className="text-gray-400 bg-gray-900 body-font">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <div className="container mx-auto flex flex-wrap p-5 flex-row items-center justify-between">
         <a
-          className="flex title-font font-medium items-center text-white mb-4 md:mb-0"
+          className="flex title-font font-medium items-center text-white mb-0"
           href="/"
         >
           <FaCircle className="fill-primary text-xl" />
@@ -16,7 +16,7 @@ const NavBar = () => {
             Accel<span className="text-primary">P</span>ro
           </span>
         </a>
-        <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+        <nav className="hidden md:ml-auto md:mr-auto md:flex flex-wrap items-center text-base justify-center">
           {/* <a className="mr-5 hover:text-primary" href="/">
             Home
           </a> */}
@@ -30,10 +30,14 @@ const NavBar = () => {
             About Us
           </a>
         </nav>
-        <MyDropdownMenu />
-        <Button className="mt-2">
-          <CartIcon />
-        </Button>
+        <div className="flex items-center gap-2 justify-center p-1">
+          <div className="md:hidden">
+            <MyDropdownMenu />
+          </div>
+          <Button>
+            <CartIcon />
+          </Button>
+        </div>
       </div>
     </header>
   );
