@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import {
   Card,
   CardContent,
@@ -8,18 +7,14 @@ import {
 } from "@/components/ui/card";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
+import Rating from "react-rating";
+import sortProducts from "@/utils/sortProducts";
 const MyCard = ({ product }) => {
   const navigate = useNavigate();
   return (
     <Card>
       <CardHeader>
-        <img
-          src={product?.image}
-          alt="iam"
-          className="rounded-lg h-60"
-          // height={"100%"}
-          // width={"100%"}
-        />
+        <img src={product?.image} alt="iam" className="rounded-lg h-60" />
       </CardHeader>
       <CardContent>
         <CardTitle>{product?.name}</CardTitle>
@@ -46,7 +41,33 @@ const MyCard = ({ product }) => {
 
         <h4>
           {" "}
-          <span className="font-bold">Rating:</span> {product?.rating}
+          <span className="font-bold">
+            <Rating
+              placeholderRating={product?.rating}
+              emptySymbol={
+                <img
+                  src="/src/assets/Spark_black.png"
+                  className="icon w-12 h-12"
+                  alt="empty star"
+                />
+              }
+              placeholderSymbol={
+                <img
+                  src="/src/assets/Spark.png"
+                  className="icon w-12 h-12"
+                  alt="placeholder"
+                />
+              }
+              fullSymbol={
+                <img
+                  src="/src/assets/Spark.png"
+                  className="icon w-12 h-12"
+                  alt="full symbol"
+                />
+              }
+              readonly
+            />
+          </span>
         </h4>
 
         <CardDescription className="my-2 text-card-foreground">
