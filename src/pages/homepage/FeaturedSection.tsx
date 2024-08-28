@@ -1,6 +1,19 @@
 import MyCard from "@/components/cards/MyCard";
+import useAxios from "@/hooks/useAxios";
+import { useEffect, useState } from "react";
 
 const FeaturedSection = () => {
+  const axios = useAxios();
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    axios
+      .get("/products")
+      .then((res) => setProducts(res?.data?.data))
+      .catch((err) => console.log(err));
+  }, [axios]);
+
+  console.log(products);
+
   return (
     <div>
       <h2 className="text-5xl font-extrabold h-36 flex justify-center items-center">
