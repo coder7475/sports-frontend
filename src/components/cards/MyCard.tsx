@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import {
   Card,
   CardContent,
@@ -12,41 +13,44 @@ const MyCard = ({ product }) => {
   return (
     <Card>
       <CardHeader>
-        <img src="/src/assets/fdgdfg.jpeg" alt="iam" className="rounded-lg" />
+        <img
+          src={product?.image}
+          alt="iam"
+          className="rounded-lg h-60"
+          // height={"100%"}
+          // width={"100%"}
+        />
       </CardHeader>
       <CardContent>
-        <CardTitle>{product.name}</CardTitle>
+        <CardTitle>{product?.name}</CardTitle>
 
         <h4>
           {" "}
-          <span className="font-bold">Brand:</span> Nike
+          <span className="font-bold">Brand:</span> {product?.brand}
         </h4>
 
         <h4>
           {" "}
-          <span className="font-bold">Category:</span> Soccer
+          <span className="font-bold">Category:</span> {product?.category}
         </h4>
 
         <h4>
           {" "}
-          <span className="font-bold">Price:</span> 35 USD
+          <span className="font-bold">Price:</span> {product?.price} USD
         </h4>
 
         <h4>
           {" "}
-          <span className="font-bold">Stock Quantity:</span> 12
+          <span className="font-bold">Stock Quantity:</span> {product?.quantity}
         </h4>
 
         <h4>
           {" "}
-          <span className="font-bold">Rating:</span> 4
+          <span className="font-bold">Rating:</span> {product?.rating}
         </h4>
 
-        <CardDescription className="my-2">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis
-          quod repellendus eaque magni sapiente. Ab non cupiditate dignissimos
-          ad, eos quod suscipit enim rerum architecto, iusto nulla voluptate
-          doloremque nostrum?
+        <CardDescription className="my-2 text-card-foreground">
+          {product?.description.slice(0, 50)}
         </CardDescription>
 
         <Button
