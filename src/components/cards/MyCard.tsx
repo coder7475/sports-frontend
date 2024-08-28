@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
-const MyCard = () => {
+const MyCard = ({ product }) => {
   const navigate = useNavigate();
   return (
     <Card>
@@ -15,7 +15,7 @@ const MyCard = () => {
         <img src="/src/assets/fdgdfg.jpeg" alt="iam" className="rounded-lg" />
       </CardHeader>
       <CardContent>
-        <CardTitle>Good 1</CardTitle>
+        <CardTitle>{product.name}</CardTitle>
 
         <h4>
           {" "}

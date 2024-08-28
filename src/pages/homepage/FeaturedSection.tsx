@@ -1,5 +1,6 @@
 import MyCard from "@/components/cards/MyCard";
 import useAxios from "@/hooks/useAxios";
+import { nanoid } from "@reduxjs/toolkit";
 import { useEffect, useState } from "react";
 
 const FeaturedSection = () => {
@@ -12,7 +13,7 @@ const FeaturedSection = () => {
       .catch((err) => console.log(err));
   }, [axios]);
 
-  console.log(products);
+  // console.log(products);
 
   return (
     <div>
@@ -20,12 +21,9 @@ const FeaturedSection = () => {
         Featured Goods
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-        <MyCard />
-        <MyCard />
-        <MyCard />
-        <MyCard />
-        <MyCard />
-        <MyCard />
+        {products.map((product) => {
+          return <MyCard key={nanoid()} product={product} />;
+        })}
       </div>
     </div>
   );
