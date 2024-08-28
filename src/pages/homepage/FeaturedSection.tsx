@@ -21,9 +21,11 @@ const FeaturedSection = () => {
         Featured Goods
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {products.map((product) => {
-          return <MyCard key={nanoid()} product={product} />;
-        })}
+        {products
+          .sort((a, b) => b.rating - a.rating)
+          .map((product) => {
+            return <MyCard key={nanoid()} product={product} />;
+          })}
       </div>
     </div>
   );
