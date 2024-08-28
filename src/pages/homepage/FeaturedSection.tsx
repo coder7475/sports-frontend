@@ -1,5 +1,6 @@
 import MyCard from "@/components/cards/MyCard";
 import useAxios from "@/hooks/useAxios";
+import sortProducts from "@/utils/sortProducts";
 import { nanoid } from "@reduxjs/toolkit";
 import { useEffect, useState } from "react";
 
@@ -13,7 +14,7 @@ const FeaturedSection = () => {
       .catch((err) => console.log(err));
   }, [axios]);
 
-  // console.log(products);
+  const featuredProducts = sortProducts(products);
 
   return (
     <div>
@@ -21,11 +22,9 @@ const FeaturedSection = () => {
         Featured Goods
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {products
-          .sort((a, b) => b.rating - a.rating)
-          .map((product) => {
-            return <MyCard key={nanoid()} product={product} />;
-          })}
+        {featuredProducts.map((product) => {
+          return <MyCard key={nanoid()} product={product} />;
+        })}
       </div>
     </div>
   );
