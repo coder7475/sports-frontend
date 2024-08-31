@@ -8,7 +8,6 @@ import {
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
 import Rating from "react-rating";
-import sortProducts from "@/utils/sortProducts";
 const MyCard = ({ product }) => {
   const navigate = useNavigate();
   return (
@@ -76,7 +75,7 @@ const MyCard = ({ product }) => {
 
         <Button
           variant="default"
-          className="bg-card-foreground text-card hover:bg-card hover:text-black hover:font-bold hover:border-2 mt-2"
+          className="bg-card-foreground text-card hover:bg-primary hover:text-black mt-2"
           onClick={() => navigate("/about")}
         >
           View Details
