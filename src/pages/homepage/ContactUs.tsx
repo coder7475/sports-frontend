@@ -1,16 +1,28 @@
 import { Button } from "@/components/ui/button";
+import { FormEvent } from "react";
 
 const ContactUs = () => {
+  const messageSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Create a new FormData object from the form element
+    const formData = new FormData(e?.currentTarget);
+
+    // Access form values using FormData methods
+    const email = formData.get("email") as string;
+    const message = formData.get("body") as string;
+
+    console.log("Email:", email);
+    console.log("Message:", message);
+    alert("Your Message is send successfully!");
+  };
+
   return (
     <div>
       <h2 className="text-5xl font-extrabold h-36 flex justify-center items-center">
         Contact Us
       </h2>
       <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          alert("Your Message is send successfully!");
-        }}
+        onSubmit={messageSubmit}
         className="border container px-5 py-24 mx-auto flex flex-col gap-5 rounded-lg"
       >
         <EmailInput />
