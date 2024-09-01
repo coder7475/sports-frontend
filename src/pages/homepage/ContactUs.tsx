@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 const ContactUs = () => {
   return (
     <div>
@@ -9,16 +11,16 @@ const ContactUs = () => {
           e.preventDefault();
           alert("Your Message is send successfully!");
         }}
-        className="border p-2 w-[50%] mx-auto flex flex-col gap-5 rounded-lg"
+        className="border container px-5 py-24 mx-auto flex flex-col gap-5 rounded-lg"
       >
         <EmailInput />
         <MessageInput />
-        <button
+        <Button
           type="submit"
-          className="border w-fit px-2 py-1 rounded-lg bg-card text-card-foreground mx-auto font-bold hover:bg-primary"
+          className="border w-fit text-xl hover:text-black px-4 py-2 rounded-lg bg-card text-card-foreground mx-auto font-bold hover:bg-primary"
         >
           Send
-        </button>
+        </Button>
       </form>
     </div>
   );
@@ -31,7 +33,8 @@ function EmailInput() {
         type="email"
         name="email"
         id="email"
-        className="w-full rounded-sm h-10 bg-card text-black px-2"
+        placeholder="john@example.com"
+        className="w-full rounded-sm h-10 bg-card px-2 text-xl text-white"
       />
     </label>
   );
@@ -45,7 +48,8 @@ function MessageInput() {
         rows={10}
         name="body"
         id="body"
-        className="w-full rounded-sm bg-card text-black p-2"
+        placeholder="Message Body"
+        className="w-full rounded-sm bg-card text-white p-2 text-xl"
       />
     </label>
   );
