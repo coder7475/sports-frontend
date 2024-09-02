@@ -1,8 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { FormEvent } from "react";
+import Swal from "sweetalert2";
 
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  },
+});
 const ContactUs = () => {
-  const messageSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const messageSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Create a new FormData object from the form element
     const formData = new FormData(e?.currentTarget);
@@ -11,9 +23,11 @@ const ContactUs = () => {
     const email = formData.get("email") as string;
     const message = formData.get("body") as string;
 
-    console.log("Email:", email);
-    console.log("Message:", message);
-    alert("Your Message is send successfully!");
+    // alert(`Thank You for contacting us!`);
+    Toast.fire({
+      icon: "success",
+      title: "Thank You for contacting us!",
+    });
   };
 
   return (
