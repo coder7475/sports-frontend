@@ -21,25 +21,26 @@ const AboutUs = () => {
           and highest standards of craftsmanship.
         </p>
 
-        <h2 className="text-5xl font-extrabold h-36 flex justify-center items-center">
-          Mission and Vision Statements
+        <h2 className="text-5xl font-extrabold h-36 flex justify-center items-center mx-auto">
+          Mission | Vision
         </h2>
-        <div className="text-xl tracking-wider mx-auto text-center w-[80%] font-bold flex justify-center items-center">
+
+        <section className="flex justify-center items-certer gap-4">
+        
+        <div className="text-xl tracking-wider mx-auto text-center font-bold flex justify-start items-center bg-card rounded-lg p-4">
           Our Mission is to empower athletes with innovative and reliable sports
           gear that enhances performance and fosters a passion for sports.
         </div>
-        <br />
-        <hr className="w-[80%] mx-auto" />
-        <br />
-        <div className="text-xl tracking-wide font-bold mx-auto w-[80%] text-center flex justify-center items-center">
+        <div className="text-xl tracking-wide font-bold mx-auto text-center flex justify-center items-center bg-card rounded-lg p-4">
           We aim be a global leader in sports goods, recognized for our quality,
           innovation, and dedication to customer satisfaction.
         </div>
+        </section>
 
         <h2 className="text-5xl font-extrabold h-36 flex justify-center items-center">
           Our Contact Information
         </h2>
-        <div className="text-xl w-[80%] mx-auto text-center">
+        <div className="text-xl w-fit p-4 md:p-8 lg:p-12 rounded-lg bg-card mx-auto text-center">
           <h3>
             <span className="font-bold">Email:</span> support@accelpro.io
           </h3>
