@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { FormEvent } from "react";
 import Swal from "sweetalert2";
+// your-app.js
 
 const Toast = Swal.mixin({
   toast: true,
