@@ -26,15 +26,15 @@ const AboutUs = () => {
         </h2>
 
         <section className="flex justify-center items-certer gap-4">
-        
-        <div className="text-xl tracking-wider mx-auto text-center font-bold flex justify-start items-center bg-card rounded-lg p-4">
-          Our Mission is to empower athletes with innovative and reliable sports
-          gear that enhances performance and fosters a passion for sports.
-        </div>
-        <div className="text-xl tracking-wide font-bold mx-auto text-center flex justify-center items-center bg-card rounded-lg p-4">
-          We aim be a global leader in sports goods, recognized for our quality,
-          innovation, and dedication to customer satisfaction.
-        </div>
+          <div className="text-xl tracking-wider mx-auto text-center font-bold flex justify-start items-center bg-card rounded-lg p-4">
+            Our Mission is to empower athletes with innovative and reliable
+            sports gear that enhances performance and fosters a passion for
+            sports.
+          </div>
+          <div className="text-xl tracking-wide font-bold mx-auto text-center flex justify-center items-center bg-card rounded-lg p-4">
+            We aim be a global leader in sports goods, recognized for our
+            quality, innovation, and dedication to customer satisfaction.
+          </div>
         </section>
 
         <h2 className="text-5xl font-extrabold h-36 flex justify-center items-center">
@@ -56,9 +56,12 @@ const AboutUs = () => {
           Our Team
         </h2>
         <div className="flex flex-col lg:flex-row gap-2 justify-center items-center">
-          
           <div className="border-2 rounded-md">
-            <img src="/src/assets/ceo.jpg" alt="ceo" className="w-[500px] h-[400px]" />
+            <img
+              src="/src/assets/ceo.jpg"
+              alt="ceo"
+              className="w-[500px] h-[400px]"
+            />
             <div className="text-center mt-2">
               <h3 className="font-black text-lg">Adetola Afolabi</h3>
               <h4 className="font-semibold">CEO</h4>
@@ -72,7 +75,11 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="border-2 rounded-md">
-            <img src="/src/assets/coo.jpg" alt="" className="w-[500px] h-[400px]" />
+            <img
+              src="/src/assets/coo.jpg"
+              alt=""
+              className="w-[500px] h-[400px]"
+            />
             <div className="text-center mt-2">
               <h3 className="font-black text-lg">Sharaddha Kutty</h3>
               <h4 className="font-semibold">COO</h4>
@@ -81,57 +88,55 @@ const AboutUs = () => {
         </div>
       </section>
       <section className="bg-graypy-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center"></h2> */}
-        <h2 className="text-5xl font-extrabold h-36 flex justify-center items-center">
-        Store Locations
-        </h2>
-        <p className="text-lg text-center mb-12">
-          Visit us at one of our conveniently located stores for the best selection of sporting goods and expert advice.
-        </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center"></h2> */}
+          <h2 className="text-5xl font-extrabold h-36 flex justify-center items-center">
+            Store Locations
+          </h2>
+          <p className="text-lg text-center mb-12">
+            Visit us at one of our conveniently located stores for the best
+            selection of sporting goods and expert advice.
+          </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Store 1 */}
-          <div className="bg-card p-6 rounded-lg shadow-md">
-            <h3 className="text-2xl font-semibold mb-2">Downtown Store</h3>
-            <p className="mb-4">123 Main Street, Downtown City</p>
-            <p className="mb-2">
-              <strong>Phone:</strong> (123) 456-7890
-            </p>
-            <p className="mb-4">
-              <strong>Hours:</strong> Sat-Thu: 9am - 8pm, Fri: 10am - 6pm
-            </p>
-            
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Store 1 */}
+            <div className="bg-card p-6 rounded-lg shadow-md">
+              <h3 className="text-2xl font-semibold mb-2">Downtown Store</h3>
+              <p className="mb-4">123 Main Street, Downtown City</p>
+              <p className="mb-2">
+                <strong>Phone:</strong> (123) 456-7890
+              </p>
+              <p className="mb-4">
+                <strong>Hours:</strong> Sat-Thu: 9am - 8pm, Fri: 10am - 6pm
+              </p>
+            </div>
 
-          {/* Store 2 */}
-          <div className="bg-card p-6 rounded-lg shadow-md">
-            <h3 className="text-2xl font-semibold mb-2">Uptown Store</h3>
-            <p className="mb-4">456 Market Street, Uptown City</p>
-            <p className="mb-2">
-              <strong>Phone:</strong> (987) 654-3210
-            </p>
-            <p className="mb-4">
-              <strong>Hours:</strong> Sat-Thu: 10am - 7pm, Fri: 10am - 6pm
-            </p>
-       
-          </div>
+            {/* Store 2 */}
+            <div className="bg-card p-6 rounded-lg shadow-md">
+              <h3 className="text-2xl font-semibold mb-2">Uptown Store</h3>
+              <p className="mb-4">456 Market Street, Uptown City</p>
+              <p className="mb-2">
+                <strong>Phone:</strong> (987) 654-3210
+              </p>
+              <p className="mb-4">
+                <strong>Hours:</strong> Sat-Thu: 10am - 7pm, Fri: 10am - 6pm
+              </p>
+            </div>
 
-          {/* Store 3 */}
-          <div className="bg-card p-6 rounded-lg shadow-md">
-            <h3 className="text-2xl font-semibold mb-2">Suburban Store</h3>
-            <p className="mb-4">789 Green Road, Suburban Area</p>
-            <p className="mb-2">
-              <strong>Phone:</strong> (555) 123-4567
-            </p>
-            <p className="mb-4">
-              <strong>Hours:</strong> Sat-Fri: 9am - 9pm, Fri: 11am - 5pm
-            </p>
-           
+            {/* Store 3 */}
+            <div className="bg-card p-6 rounded-lg shadow-md">
+              <h3 className="text-2xl font-semibold mb-2">Suburban Store</h3>
+              <p className="mb-4">789 Green Road, Suburban Area</p>
+              <p className="mb-2">
+                <strong>Phone:</strong> (555) 123-4567
+              </p>
+              <p className="mb-4">
+                <strong>Hours:</strong> Sat-Fri: 9am - 9pm, Fri: 11am - 5pm
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
       <section className="max-w-[1280px] mx-auto mt-3">
         <Footer />
       </section>

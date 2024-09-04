@@ -1,5 +1,6 @@
 import App from "@/App";
 import AboutUs from "@/pages/AboutUs";
+import AllProducts from "@/pages/AllProducts";
 import ErrorPage from "@/pages/ErrorPage";
 import ManageProducts from "@/pages/ManageProducts";
 
@@ -21,7 +22,7 @@ const routes = [
   },
   {
     path: "/all-products",
-    element: <div>All Products</div>,
+    element: <AllProducts />,
     errorElement: <ErrorPage />,
   },
 ];
