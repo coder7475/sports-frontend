@@ -1,6 +1,5 @@
 import Banner from "./components/banner/banner";
 import Footer from "./components/footer/Footer";
-import Contact from "./components/forms/contact/Contact";
 import NavBar from "./components/navbar/Navbar";
 import ContactUs from "./pages/homepage/ContactUs";
 import FeaturedSection from "./pages/homepage/FeaturedSection";
