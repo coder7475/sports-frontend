@@ -17,10 +17,7 @@ const NavBar = () => {
           </span>
         </a>
         <nav className="hidden md:ml-auto md:mr-auto md:flex flex-wrap items-center text-base justify-center">
-          {/* <a className="mr-5 hover:text-primary" href="/">
-            Home
-          </a> */}
-          <a className="mr-5 hover:text-primary" href="/">
+          <a className="mr-5 hover:text-primary" href="/all-products">
             All Products
           </a>
           <a className="mr-5 hover:text-primary" href="/manage-products">
