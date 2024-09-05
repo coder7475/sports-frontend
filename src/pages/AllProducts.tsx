@@ -104,7 +104,7 @@ const AllProducts = () => {
             <select
               className="p-2 border rounded bg-card"
               onChange={(e) => {
-                // Implement rating filter
+                // rating filter
                 axios
                   .get(`/products?rating=${e.target.value}`)
                   .then((res) => setProducts(res?.data?.data))
@@ -121,13 +121,16 @@ const AllProducts = () => {
             <select
               className="p-2 border rounded bg-card"
               onChange={(e) => {
-                // Implement price sorting
-                console.log(e.target.value);
+                // price sorting
+                axios
+                  .get(`/products?sort=${e.target.value}`)
+                  .then((res) => setProducts(res?.data?.data))
+                  .catch((err) => console.log(err));
               }}
             >
               <option value="">Sort by Price</option>
-              <option value="low-to-high">Low to High</option>
-              <option value="high-to-low">High to Low</option>
+              <option value="asc">Low to High</option>
+              <option value="dsc">High to Low</option>
             </select>
           </div>
         </div>
