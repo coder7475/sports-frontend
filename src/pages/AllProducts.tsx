@@ -32,11 +32,13 @@ const AllProducts = () => {
             <input
               type="text"
               placeholder="Search products..."
-              // className="p-3 border rounded w-full mb-4 text-lg"
               className="p-2 border rounded w-full lg:w-1/3 bg-card"
               onChange={(e) => {
-                // Implement search logic
-                console.log(e.target.value);
+                // search logic
+                axios
+                  .get(`/products?name=${e.target.value}`)
+                  .then((res) => setProducts(res?.data?.data))
+                  .catch((err) => console.log(err));
               }}
             />
             <select
