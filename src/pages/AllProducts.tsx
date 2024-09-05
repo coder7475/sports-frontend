@@ -58,7 +58,7 @@ const AllProducts = () => {
               <option value="Footwear">Footwear</option>
             </select>
             <select
-              className="p-2 border rounded"
+              className="p-2 border rounded bg-card"
               onChange={(e) => {
                 // Implement price filter
                 console.log(e.target.value);
@@ -71,7 +71,7 @@ const AllProducts = () => {
               <option value="201+">$201+</option>
             </select>
             <select
-              className="p-2 border rounded"
+              className="p-2 border rounded bg-card"
               onChange={(e) => {
                 // Implement brand filter
                 console.log(e.target.value);
@@ -84,7 +84,7 @@ const AllProducts = () => {
               {/* Add more brands as needed */}
             </select>
             <select
-              className="p-2 border rounded"
+              className="p-2 border rounded bg-card"
               onChange={(e) => {
                 // Implement rating filter
                 console.log(e.target.value);
@@ -97,10 +97,8 @@ const AllProducts = () => {
               <option value="2">2 Stars & Up</option>
               <option value="1">1 Star & Up</option>
             </select>
-            {/* </div> */}
-            {/* <div className="flex justify-end"> */}
             <select
-              className="p-2 border rounded"
+              className="p-2 border rounded bg-card"
               onChange={(e) => {
                 // Implement price sorting
                 console.log(e.target.value);
