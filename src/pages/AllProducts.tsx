@@ -33,24 +33,29 @@ const AllProducts = () => {
               type="text"
               placeholder="Search products..."
               // className="p-3 border rounded w-full mb-4 text-lg"
-              className="p-2 border rounded w-full lg:w-1/3"
+              className="p-2 border rounded w-full lg:w-1/3 bg-card"
               onChange={(e) => {
                 // Implement search logic
                 console.log(e.target.value);
               }}
             />
             <select
-              className="p-2 border rounded"
+              className="p-2 border rounded bg-card"
               onChange={(e) => {
                 // Implement category filter
                 console.log(e.target.value);
               }}
             >
               <option value="">All Categories</option>
-              <option value="football">Football</option>
-              <option value="basketball">Basketball</option>
-              <option value="tennis">Tennis</option>
-              {/* Add more sport categories as needed */}
+              <option value="Ball Sports">Ball Sports</option>
+              <option value="Basketball">Basketball</option>
+              <option value="Football">Football</option>
+              <option value="Tennis">Tennis</option>
+              <option value="Golf">Golf</option>
+              <option value="Racket Sports">Racket Sports</option>
+              <option value="Cycling">Cycling</option>
+              <option value="Swimming">Swimming</option>
+              <option value="Footwear">Footwear</option>
             </select>
             <select
               className="p-2 border rounded"
