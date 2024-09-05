@@ -44,8 +44,11 @@ const AllProducts = () => {
             <select
               className="p-2 border rounded bg-card"
               onChange={(e) => {
-                // Implement category filter
-                console.log(e.target.value);
+                // category filter logic
+                axios
+                  .get(`/products?category=${e.target.value}`)
+                  .then((res) => setProducts(res?.data?.data))
+                  .catch((err) => console.log(err));
               }}
             >
               <option value="">All Categories</option>
