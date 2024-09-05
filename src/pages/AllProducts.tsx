@@ -81,15 +81,25 @@ const AllProducts = () => {
             <select
               className="p-2 border rounded bg-card"
               onChange={(e) => {
-                // Implement brand filter
-                console.log(e.target.value);
+                // brand filter
+                axios
+                  .get(`/products?brand=${e.target.value}`)
+                  .then((res) => setProducts(res?.data?.data))
+                  .catch((err) => console.log(err));
               }}
             >
               <option value="">All Brands</option>
               <option value="nike">Nike</option>
               <option value="adidas">Adidas</option>
               <option value="puma">Puma</option>
-              {/* Add more brands as needed */}
+              <option value="wilson">Wilson</option>
+              <option value="callaway">Callaway</option>
+              <option value="spalding">Spalding</option>
+              <option value="rawlings">Rawlings</option>
+              <option value="liforme">Liforme</option>
+              <option value="giro">Giro</option>
+              <option value="bowflex">Bowflex</option>
+              <option value="speedo">Speedo</option>
             </select>
             <select
               className="p-2 border rounded bg-card"
