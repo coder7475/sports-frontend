@@ -65,8 +65,7 @@ const AllProducts = () => {
             <select
               className="p-2 border rounded bg-card"
               onChange={(e) => {
-                // Implement price filter
-                console.log(e.target.value);
+                // price filter
                 axios
                   .get(`/products?price=${e.target.value}`)
                   .then((res) => setProducts(res?.data?.data))
@@ -74,10 +73,10 @@ const AllProducts = () => {
               }}
             >
               <option value="">All Prices</option>
-              <option value="500">$0 - $50</option>
-              <option value="51-100">$51 - $100</option>
-              <option value="101-200">$101 - $200</option>
-              <option value="201+">$201+</option>
+              <option value="0-50">$ 0 - $ 50</option>
+              <option value="51-100">$ 51 - $ 100</option>
+              <option value="101-200">$ 101 - $ 200</option>
+              <option value="201+">$ 201+</option>
             </select>
             <select
               className="p-2 border rounded bg-card"
