@@ -27,6 +27,86 @@ const AllProducts = () => {
         <h2 className="text-5xl font-extrabold h-36 flex justify-center items-center">
           All Products
         </h2>
+        <div className="mb-8">
+          <div className="flex flex-wrap justify-center w-full items-center gap-4 mb-4">
+            <input
+              type="text"
+              placeholder="Search products..."
+              // className="p-3 border rounded w-full mb-4 text-lg"
+              className="p-2 border rounded w-full lg:w-1/3"
+              onChange={(e) => {
+                // Implement search logic
+                console.log(e.target.value);
+              }}
+            />
+            <select
+              className="p-2 border rounded"
+              onChange={(e) => {
+                // Implement category filter
+                console.log(e.target.value);
+              }}
+            >
+              <option value="">All Categories</option>
+              <option value="football">Football</option>
+              <option value="basketball">Basketball</option>
+              <option value="tennis">Tennis</option>
+              {/* Add more sport categories as needed */}
+            </select>
+            <select
+              className="p-2 border rounded"
+              onChange={(e) => {
+                // Implement price filter
+                console.log(e.target.value);
+              }}
+            >
+              <option value="">All Prices</option>
+              <option value="0-50">$0 - $50</option>
+              <option value="51-100">$51 - $100</option>
+              <option value="101-200">$101 - $200</option>
+              <option value="201+">$201+</option>
+            </select>
+            <select
+              className="p-2 border rounded"
+              onChange={(e) => {
+                // Implement brand filter
+                console.log(e.target.value);
+              }}
+            >
+              <option value="">All Brands</option>
+              <option value="nike">Nike</option>
+              <option value="adidas">Adidas</option>
+              <option value="puma">Puma</option>
+              {/* Add more brands as needed */}
+            </select>
+            <select
+              className="p-2 border rounded"
+              onChange={(e) => {
+                // Implement rating filter
+                console.log(e.target.value);
+              }}
+            >
+              <option value="">All Ratings</option>
+              <option value="5">5 Stars</option>
+              <option value="4">4 Stars & Up</option>
+              <option value="3">3 Stars & Up</option>
+              <option value="2">2 Stars & Up</option>
+              <option value="1">1 Star & Up</option>
+            </select>
+            {/* </div> */}
+            {/* <div className="flex justify-end"> */}
+            <select
+              className="p-2 border rounded"
+              onChange={(e) => {
+                // Implement price sorting
+                console.log(e.target.value);
+              }}
+            >
+              <option value="">Sort by Price</option>
+              <option value="low-to-high">Low to High</option>
+              <option value="high-to-low">High to Low</option>
+            </select>
+          </div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {products.map((product: IProduct) => {
             return <MyCard key={nanoid()} product={product} />;
