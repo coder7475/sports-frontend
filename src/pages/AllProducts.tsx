@@ -1,6 +1,7 @@
 import MyCard from "@/components/cards/MyCard";
 import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/navbar/Navbar";
+import { Button } from "@/components/ui/button";
 import useAxios from "@/hooks/useAxios";
 import { IProduct } from "@/interfaces/product.interface";
 import { nanoid } from "@reduxjs/toolkit";
@@ -132,6 +133,24 @@ const AllProducts = () => {
               <option value="asc">Low to High</option>
               <option value="dsc">High to Low</option>
             </select>
+            <Button
+              className="p-2 border rounded bg-secondary text-black font-bold hover:bg-primary"
+              onClick={() => {
+                // Clear all filters
+                axios
+                  .get("/products")
+                  .then((res) => setProducts(res?.data?.data))
+                  .catch((err) => console.log(err));
+
+                // Reset select elements to default values
+                const selects = document.querySelectorAll("select");
+                selects.forEach((select) => {
+                  select.value = "";
+                });
+              }}
+            >
+              Clear Filters
+            </Button>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
