@@ -105,7 +105,10 @@ const AllProducts = () => {
               className="p-2 border rounded bg-card"
               onChange={(e) => {
                 // Implement rating filter
-                console.log(e.target.value);
+                axios
+                  .get(`/products?rating=${e.target.value}`)
+                  .then((res) => setProducts(res?.data?.data))
+                  .catch((err) => console.log(err));
               }}
             >
               <option value="">All Ratings</option>
