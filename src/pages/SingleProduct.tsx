@@ -45,7 +45,7 @@ const SingleProduct = () => {
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-96 object-cover rounded-lg"
+              className="w-full h-96 object-fit rounded-lg"
             />
           </CardHeader>
           <CardContent className="space-y-4">
@@ -62,35 +62,35 @@ const SingleProduct = () => {
             <div>
               <span className="font-bold">Category:</span> {product.category}
             </div>
-            <div>
-              <span className="font-bold">Rating:</span>
+            <div className="flex items-center">
+              <span className="font-bold mr-2 mb-2">Rating:</span>
               <Rating
                 placeholderRating={product.rating}
                 emptySymbol={
                   <img
                     src="/src/assets/Spark_black.png"
-                    className="icon w-8 h-8"
+                    className="icon w-6 h-6"
                     alt="empty star"
                   />
                 }
                 placeholderSymbol={
                   <img
                     src="/src/assets/Spark.png"
-                    className="icon w-8 h-8"
+                    className="icon w-6 h-6"
                     alt="placeholder"
                   />
                 }
                 fullSymbol={
                   <img
                     src="/src/assets/Spark.png"
-                    className="icon w-8 h-8"
+                    className="icon w-6 h-6"
                     alt="full symbol"
                   />
                 }
                 readonly
               />
             </div>
-            <CardDescription className="text-lg">
+            <CardDescription className="text-lg text-card-foreground">
               {product.description}
             </CardDescription>
             <Button
