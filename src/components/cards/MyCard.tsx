@@ -8,7 +8,9 @@ import {
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
 import Rating from "react-rating";
-const MyCard = ({ product }) => {
+import { IProduct } from "@/interfaces/product.interface";
+
+const MyCard = ({ product }: { product: IProduct }) => {
   const navigate = useNavigate();
   return (
     <Card>
