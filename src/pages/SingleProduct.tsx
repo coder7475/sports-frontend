@@ -99,13 +99,13 @@ const SingleProduct = () => {
             <Button
               variant="default"
               className="bg-card-foreground text-card hover:bg-primary hover:text-black w-full"
-              //   onClick={() => {
-              //     dispatch(addToCart(product));
-              //     Toast.fire({
-              //       icon: "success",
-              //       title: "Product added to cart successfully!",
-              //     });
-              //   }}
+              onClick={() => {
+                dispatch(addToCart(product));
+                Toast.fire({
+                  icon: "success",
+                  title: "Product added to cart successfully!",
+                });
+              }}
             >
               Add to Cart
             </Button>
