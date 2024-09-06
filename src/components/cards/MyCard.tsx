@@ -78,7 +78,7 @@ const MyCard = ({ product }: { product: IProduct }) => {
         <Button
           variant="default"
           className="bg-card-foreground text-card hover:bg-primary hover:text-black mt-2"
-          onClick={() => navigate("/single-product")}
+          onClick={() => navigate(`/single-product/${product?._id}`)}
         >
           View Details
         </Button>

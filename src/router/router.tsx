@@ -3,6 +3,7 @@ import AboutUs from "@/pages/AboutUs";
 import AllProducts from "@/pages/AllProducts";
 import ErrorPage from "@/pages/ErrorPage";
 import ManageProducts from "@/pages/ManageProducts";
+import SingleProduct from "@/pages/SingleProduct";
 
 const routes = [
   {
@@ -26,8 +27,8 @@ const routes = [
     errorElement: <ErrorPage />,
   },
   {
-    path: "/single-product",
-    element: <div>Single Product Page</div>,
+    path: "/single-product/:id",
+    element: <SingleProduct />,
     errorElement: <ErrorPage />,
   },
 ];
