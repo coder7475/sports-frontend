@@ -25,6 +25,11 @@ const routes = [
     element: <AllProducts />,
     errorElement: <ErrorPage />,
   },
+  {
+    path: "/single-product",
+    element: <div>Single Product Page</div>,
+    errorElement: <ErrorPage />,
+  },
 ];
 
 export default routes;
