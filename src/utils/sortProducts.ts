@@ -1,4 +1,3 @@
-// @ts-ignore
 const sortProducts = (products) => {
   return products
     .sort((a: { rating: number }, b: { rating: number }) => b.rating - a.rating)

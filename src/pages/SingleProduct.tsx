@@ -13,12 +13,14 @@ import { Button } from "@/components/ui/button";
 import Rating from "react-rating";
 import NavBar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/redux/cartSlice";
 
 const SingleProduct = () => {
   const [product, setProduct] = useState<IProduct | null>(null);
   const { id } = useParams<{ id: string }>();
   const axios = useAxios();
-
+  const dispatch = useDispatch();
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -97,8 +99,7 @@ const SingleProduct = () => {
               variant="default"
               className="bg-card-foreground text-card hover:bg-primary hover:text-black w-full"
               onClick={() => {
-                // Add to cart functionality here
-                console.log("Added to cart:", product);
+                dispatch(addToCart(product));
               }}
             >
               Add to Cart
