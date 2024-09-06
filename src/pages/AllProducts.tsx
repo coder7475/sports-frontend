@@ -6,18 +6,31 @@ import useAxios from "@/hooks/useAxios";
 import { IProduct } from "@/interfaces/product.interface";
 import { nanoid } from "@reduxjs/toolkit";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const AllProducts = () => {
   const axios = useAxios();
-
+  const location = useLocation();
   const [products, setProducts] = useState<IProduct[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const categoryParam = params.get("category");
+    if (categoryParam) {
+      setSelectedCategory(categoryParam);
+      fetchProducts(`/products?category=${encodeURIComponent(categoryParam)}`);
+    } else {
+      fetchProducts("/products");
+    }
+  }, [location, axios]);
+
+  const fetchProducts = (url: string) => {
     axios
-      .get("/products")
+      .get(url)
       .then((res) => setProducts(res?.data?.data))
       .catch((err) => console.log(err));
-  }, [axios]);
+  };
 
   return (
     <main className="font-helve container mx-auto">
@@ -35,21 +48,15 @@ const AllProducts = () => {
               placeholder="Search products..."
               className="p-2 border rounded w-full lg:w-1/3 bg-card"
               onChange={(e) => {
-                // search logic
-                axios
-                  .get(`/products?name=${e.target.value}`)
-                  .then((res) => setProducts(res?.data?.data))
-                  .catch((err) => console.log(err));
+                fetchProducts(`/products?name=${e.target.value}`);
               }}
             />
             <select
               className="p-2 border rounded bg-card"
+              value={selectedCategory}
               onChange={(e) => {
-                // category filter logic
-                axios
-                  .get(`/products?category=${e.target.value}`)
-                  .then((res) => setProducts(res?.data?.data))
-                  .catch((err) => console.log(err));
+                setSelectedCategory(e.target.value);
+                fetchProducts(`/products?category=${e.target.value}`);
               }}
             >
               <option value="">All Categories</option>
@@ -66,11 +73,7 @@ const AllProducts = () => {
             <select
               className="p-2 border rounded bg-card"
               onChange={(e) => {
-                // price filter
-                axios
-                  .get(`/products?price=${e.target.value}`)
-                  .then((res) => setProducts(res?.data?.data))
-                  .catch((err) => console.log(err));
+                fetchProducts(`/products?price=${e.target.value}`);
               }}
             >
               <option value="">All Prices</option>
@@ -82,11 +85,7 @@ const AllProducts = () => {
             <select
               className="p-2 border rounded bg-card"
               onChange={(e) => {
-                // brand filter
-                axios
-                  .get(`/products?brand=${e.target.value}`)
-                  .then((res) => setProducts(res?.data?.data))
-                  .catch((err) => console.log(err));
+                fetchProducts(`/products?brand=${e.target.value}`);
               }}
             >
               <option value="">All Brands</option>
@@ -105,11 +104,7 @@ const AllProducts = () => {
             <select
               className="p-2 border rounded bg-card"
               onChange={(e) => {
-                // rating filter
-                axios
-                  .get(`/products?rating=${e.target.value}`)
-                  .then((res) => setProducts(res?.data?.data))
-                  .catch((err) => console.log(err));
+                fetchProducts(`/products?rating=${e.target.value}`);
               }}
             >
               <option value="">All Ratings</option>
@@ -122,11 +117,7 @@ const AllProducts = () => {
             <select
               className="p-2 border rounded bg-card"
               onChange={(e) => {
-                // price sorting
-                axios
-                  .get(`/products?sort=${e.target.value}`)
-                  .then((res) => setProducts(res?.data?.data))
-                  .catch((err) => console.log(err));
+                fetchProducts(`/products?sort=${e.target.value}`);
               }}
             >
               <option value="">Sort by Price</option>
@@ -136,11 +127,8 @@ const AllProducts = () => {
             <Button
               className="p-2 border rounded bg-secondary text-black font-bold hover:bg-primary"
               onClick={() => {
-                // Clear all filters
-                axios
-                  .get("/products")
-                  .then((res) => setProducts(res?.data?.data))
-                  .catch((err) => console.log(err));
+                setSelectedCategory("");
+                fetchProducts("/products");
 
                 // Reset select elements to default values
                 const selects = document.querySelectorAll("select");
