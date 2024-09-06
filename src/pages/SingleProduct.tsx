@@ -22,6 +22,7 @@ const SingleProduct = () => {
   const { id } = useParams<{ id: string }>();
   const axios = useAxios();
   const dispatch = useDispatch();
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -34,6 +35,36 @@ const SingleProduct = () => {
 
     fetchProduct();
   }, [id, axios]);
+
+  const handleAddToCart = async () => {
+    if (!product) return;
+
+    dispatch(addToCart(product));
+    Toast.fire({
+      icon: "success",
+      title: "Product added to cart successfully!",
+    });
+
+    // Decrease product quantity in the backend using axios
+    await axios
+      .patch(`/products/${id}`, {
+        quantity: product.quantity - 1,
+      })
+      .then((response) => {
+        if (response.status !== 200) {
+          Toast.fire({
+            icon: "error",
+            title: "Failed to update product information",
+          });
+        }
+      });
+
+    const response = await axios.get(`/products/${id}`);
+
+    if (response.status === 200) {
+      setProduct(response.data.data);
+    }
+  };
 
   if (!product) {
     return <div>Loading...</div>;
@@ -99,13 +130,7 @@ const SingleProduct = () => {
             <Button
               variant="default"
               className="bg-card-foreground text-card hover:bg-primary hover:text-black w-full"
-              onClick={() => {
-                dispatch(addToCart(product));
-                Toast.fire({
-                  icon: "success",
-                  title: "Product added to cart successfully!",
-                });
-              }}
+              onClick={handleAddToCart}
             >
               Add to Cart
             </Button>
