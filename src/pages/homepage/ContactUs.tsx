@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
+import Toast from "@/utils/toast";
 import { FormEvent } from "react";
-import Swal from "sweetalert2";
-// your-app.js
 
 const ContactUs = () => {
   const messageSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -10,10 +9,9 @@ const ContactUs = () => {
     const formData = new FormData(e?.currentTarget);
 
     // Access form values using FormData methods
-    const email = formData.get("email") as string;
-    const message = formData.get("body") as string;
+    // const email = formData.get("email") as string;
+    // const message = formData.get("body") as string;
 
-    // alert(`Thank You for contacting us!`);
     Toast.fire({
       icon: "success",
       title: "Thank You for contacting us!",
