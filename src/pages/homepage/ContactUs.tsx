@@ -6,7 +6,7 @@ const ContactUs = () => {
   const messageSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Create a new FormData object from the form element
-    const formData = new FormData(e?.currentTarget);
+    // const formData = new FormData(e?.currentTarget);
 
     // Access form values using FormData methods
     // const email = formData.get("email") as string;

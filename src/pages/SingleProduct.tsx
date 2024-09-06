@@ -15,6 +15,7 @@ import NavBar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/cartSlice";
+import Toast from "@/utils/toast";
 
 const SingleProduct = () => {
   const [product, setProduct] = useState<IProduct | null>(null);
@@ -98,9 +99,13 @@ const SingleProduct = () => {
             <Button
               variant="default"
               className="bg-card-foreground text-card hover:bg-primary hover:text-black w-full"
-              onClick={() => {
-                dispatch(addToCart(product));
-              }}
+              //   onClick={() => {
+              //     dispatch(addToCart(product));
+              //     Toast.fire({
+              //       icon: "success",
+              //       title: "Product added to cart successfully!",
+              //     });
+              //   }}
             >
               Add to Cart
             </Button>
