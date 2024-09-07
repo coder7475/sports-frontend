@@ -1,7 +1,7 @@
 // A navbar with logo and necessary menu items (e.g. All Products, Manage Products, Cart, About Us)
 import { Button } from "@/components/ui/button";
 import { FaCircle } from "react-icons/fa6";
-import { MyDropdownMenu } from "./dropdown/MyDropdownMenu";
+import MyDropdownMenu from "./dropdown/MyDropdownMenu";
 
 const NavBar = () => {
   return (

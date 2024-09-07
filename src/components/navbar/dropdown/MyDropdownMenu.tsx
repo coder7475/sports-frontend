@@ -4,15 +4,10 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  // DropdownMenuLabel,
-  // DropdownMenuPortal,
-  // DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  // DropdownMenuSub,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function MyDropdownMenu() {
+const MyDropdownMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -20,27 +15,21 @@ export function MyDropdownMenu() {
           Menu
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 bg-card text-card-foreground">
-        {/* <DropdownMenuLabel>My Account</DropdownMenuLabel> */}
-        {/* <DropdownMenuSeparator />MyDropdownMenu */}
+      <DropdownMenuContent className="bg-card text-card-foreground">
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            {/* <User className="mr-2 h-4 w-4" /> */}
-            <span>All Products</span>
-            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            {/* <CreditCard className="mr-2 h-4 w-4" /> */}
-            <span>Manage Products</span>
-            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            {/* <Settings className="mr-2 h-4 w-4" /> */}
-            <span>About Us</span>
-            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-          </DropdownMenuItem>
+          <a className="hover:text-primary" href="/all-products">
+            <DropdownMenuItem>All Products</DropdownMenuItem>
+          </a>
+          <a className="hover:text-primary" href="/manage-products">
+            <DropdownMenuItem>Manage Products</DropdownMenuItem>
+          </a>
+          <a className="hover:text-primary" href="/about">
+            <DropdownMenuItem>About Us</DropdownMenuItem>
+          </a>
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   );
-}
+};
+
+export default MyDropdownMenu;
