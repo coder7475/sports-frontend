@@ -128,6 +128,7 @@ const SingleProduct = () => {
               {product.description}
             </CardDescription>
             <Button
+              disabled={product.quantity === 0}
               variant="default"
               className="bg-card-foreground text-card hover:bg-primary hover:text-black w-full"
               onClick={handleAddToCart}
