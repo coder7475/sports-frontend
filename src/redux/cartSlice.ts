@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction, Slice } from "@reduxjs/toolkit";
 import { IProduct } from "@/interfaces/product.interface";
 
-interface CartItem extends IProduct {
+export interface CartItem extends IProduct {
   bought: number;
 }
 
