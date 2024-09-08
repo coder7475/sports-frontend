@@ -14,10 +14,17 @@ import CartIcon from "../ui/CartIcon";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { CartItem } from "@/redux/cartSlice";
+import { useState } from "react";
+import useAxios from "@/hooks/useAxios";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   // fetch cart from redux store
   const cartItems = useSelector((state: RootState) => state.cart.items);
+  const axios = useAxios();
+  const navigate = useNavigate();
+  const [isCheckoutDisabled, setIsCheckoutDisabled] = useState(false);
+
   // Calculate total price and VAT
   const totalPrice = cartItems.reduce(
     (total: number, item: CartItem) => total + item.price * item.bought,
@@ -25,6 +32,29 @@ const Cart = () => {
   );
   const vat = totalPrice * 0.15;
   const totalWithVAT = totalPrice + vat;
+
+  const handleCheckout = async () => {
+    setIsCheckoutDisabled(true);
+    try {
+      const stockPromises = cartItems.map((item: CartItem) =>
+        axios.get(`/products/${item._id}`)
+      );
+      const stockResponses = await Promise.all(stockPromises);
+      const outOfStock = stockResponses.some(
+        (response, index) => response.data.quantity < cartItems[index].bought
+      );
+
+      if (outOfStock) {
+        alert("One or more items are out of stock.");
+        setIsCheckoutDisabled(false);
+      } else {
+        navigate("/checkout");
+      }
+    } catch (error) {
+      console.error("Error checking stock:", error);
+      setIsCheckoutDisabled(false);
+    }
+  };
 
   return (
     <AlertDialog>
@@ -74,7 +104,12 @@ const Cart = () => {
         <AlertDialogFooter>
           <AlertDialogCancel>Close</AlertDialogCancel>
           {cartItems.length > 0 && (
-            <AlertDialogAction>Checkout</AlertDialogAction>
+            <AlertDialogAction
+              onClick={handleCheckout}
+              disabled={isCheckoutDisabled}
+            >
+              Checkout
+            </AlertDialogAction>
           )}
         </AlertDialogFooter>
       </AlertDialogContent>
