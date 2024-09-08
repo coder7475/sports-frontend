@@ -96,7 +96,7 @@ const Checkout = () => {
               value="cash"
               checked={paymentMethod === "cash"}
               onChange={() => setPaymentMethod("cash")}
-              className="form-radio text-primary"
+              className="form-radio accent-yellow-500"
             />
             <span>Cash on Delivery</span>
           </label>
@@ -106,7 +106,7 @@ const Checkout = () => {
               value="stripe"
               checked={paymentMethod === "stripe"}
               onChange={() => setPaymentMethod("stripe")}
-              className="form-radio text-primary"
+              className="form-radio accent-yellow-500"
             />
             <span>Stripe</span>
           </label>
