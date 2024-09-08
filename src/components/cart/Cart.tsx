@@ -66,7 +66,8 @@ const Cart = () => {
               </ul>
             )}
             <p className="mt-4 font-bold">
-              Total Price (including 15% VAT): ${totalWithVAT.toFixed(2)}
+              Total Price (including 15% VAT):{" "}
+              <span className="text-primary">${totalWithVAT.toFixed(2)}</span>
             </p>
           </AlertDialogDescription>
         </AlertDialogHeader>
