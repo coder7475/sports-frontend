@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useAxios from "@/hooks/useAxios";
 import Toast from "@/utils/toast";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 const Checkout = () => {
   const [userDetails, setUserDetails] = useState({
@@ -13,6 +15,7 @@ const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState("cash");
   const axios = useAxios();
   const navigate = useNavigate();
+  const cartItems = useSelector((state: RootState) => state.cart.items);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -22,17 +25,18 @@ const Checkout = () => {
   const handlePlaceOrder = async () => {
     try {
       // Deduct stock logic here
-      await axios.post("/orders", { userDetails, paymentMethod });
+      for (const item of cartItems) {
+        await axios.patch(`/products/${item._id}`, {
+          quantity: item.quantity - item.bought,
+        });
+      }
 
-      if (paymentMethod === "cash") {
+      if (paymentMethod) {
         Toast.fire({
           icon: "success",
           title: "Order placed successfully! Redirecting to home...",
         });
         navigate("/success");
-      } else {
-        // Redirect to Stripe payment page
-        window.location.href = "/stripe-payment"; // Replace with actual Stripe payment URL
       }
     } catch (error) {
       console.error("Error placing order:", error);

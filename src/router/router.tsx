@@ -5,6 +5,7 @@ import Checkout from "@/pages/Checkout";
 import ErrorPage from "@/pages/ErrorPage";
 import ManageProducts from "@/pages/ManageProducts";
 import SingleProduct from "@/pages/SingleProduct";
+import SuccessPage from "@/pages/SuccessPage";
 
 const routes = [
   {
@@ -35,6 +36,11 @@ const routes = [
   {
     path: "/checkout",
     element: <Checkout />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/success",
+    element: <SuccessPage />,
     errorElement: <ErrorPage />,
   },
 ];
