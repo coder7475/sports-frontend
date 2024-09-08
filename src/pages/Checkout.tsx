@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useAxios from "@/hooks/useAxios";
 import Toast from "@/utils/toast";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/redux/store";
+import { clearCart } from "@/redux/cartSlice";
 
 const Checkout = () => {
   const [userDetails, setUserDetails] = useState({
@@ -15,6 +16,7 @@ const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState("cash");
   const axios = useAxios();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,6 +34,9 @@ const Checkout = () => {
       }
 
       if (paymentMethod) {
+        // Clear the cart after successful transaction
+        dispatch(clearCart({}));
+
         Toast.fire({
           icon: "success",
           title: "Order placed successfully! Redirecting to home...",
