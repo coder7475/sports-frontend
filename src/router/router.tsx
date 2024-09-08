@@ -1,6 +1,7 @@
 import App from "@/App";
 import AboutUs from "@/pages/AboutUs";
 import AllProducts from "@/pages/AllProducts";
+import Checkout from "@/pages/Checkout";
 import ErrorPage from "@/pages/ErrorPage";
 import ManageProducts from "@/pages/ManageProducts";
 import SingleProduct from "@/pages/SingleProduct";
@@ -33,7 +34,7 @@ const routes = [
   },
   {
     path: "/checkout",
-    element: <div>Checkout</div>,
+    element: <Checkout />,
     errorElement: <ErrorPage />,
   },
 ];
