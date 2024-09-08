@@ -31,6 +31,11 @@ const routes = [
     element: <SingleProduct />,
     errorElement: <ErrorPage />,
   },
+  {
+    path: "/checkout",
+    element: <div>Checkout</div>,
+    errorElement: <ErrorPage />,
+  },
 ];
 
 export default routes;
