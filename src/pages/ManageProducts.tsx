@@ -5,11 +5,12 @@ import { IoMdAddCircle } from "react-icons/io";
 import { GrUpdate } from "react-icons/gr";
 import { FaListAlt } from "react-icons/fa";
 import AddProductPanel from "./ManageProducts/AddProductPanel";
+import ListProducts from "./ManageProducts/ListProducts";
 
 const ManageProducts = () => {
   const [tabSelected, setTabSelected] = useState({
-    currentTab: 4,
-    noTabs: 4,
+    currentTab: 3,
+    noTabs: 3,
   });
   const wrapperRef = useRef(null);
 
@@ -129,11 +130,7 @@ const ManageProducts = () => {
                 aria-labelledby="tab-label-3ai"
                 tabIndex={-1}
               >
-                <p>
-                  This is where you can display a list of all products. You can
-                  add a component or logic here to fetch and display the
-                  products.
-                </p>
+                <ListProducts />
               </div>
             </div>
           </section>
