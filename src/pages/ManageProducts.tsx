@@ -3,7 +3,6 @@ import NavBar from "@/components/navbar/Navbar";
 import { useRef, useState } from "react";
 import { IoMdAddCircle } from "react-icons/io";
 import { GrUpdate } from "react-icons/gr";
-import { MdAutoDelete } from "react-icons/md";
 import { FaListAlt } from "react-icons/fa";
 import AddProductPanel from "./ManageProducts/AddProductPanel";
 
@@ -74,30 +73,7 @@ const ManageProducts = () => {
                   <GrUpdate className="text-xl" />
                 </button>
               </li>
-              <li className="" role="presentation">
-                <button
-                  className={`-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-card hover:stroke-card focus:bg-card focus-visible:outline-none disabled:cursor-not-allowed ${
-                    tabSelected.currentTab === 3
-                      ? "border-secondary stroke-secondary text-secondary hover:border-card  hover:text-card focus:border-primary focus:stroke-primary focus:text-primary disabled:border-slate-500"
-                      : "justify-self-center border-transparent stroke-slate-700 text-slate-700 hover:border-secondary hover:text-secondary focus:border-card focus:stroke-card focus:text-card disabled:text-slate-500"
-                  }`}
-                  id="tab-label-3ai"
-                  role="tab"
-                  aria-setsize={4}
-                  aria-posinset={3}
-                  tabIndex={tabSelected.currentTab === 3 ? 0 : -1}
-                  aria-controls="tab-panel-3ai"
-                  aria-selected={tabSelected.currentTab === 3}
-                  onClick={() =>
-                    setTabSelected({ ...tabSelected, currentTab: 3 })
-                  }
-                >
-                  <span className="order-2 pt-1.5">DELETE PRODUCT</span>
-                  <span className="relative only:-mx-6">
-                    <MdAutoDelete className="text-xl" />
-                  </span>
-                </button>
-              </li>
+
               <li className="" role="presentation">
                 <button
                   className={`-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-card hover:stroke-card focus:bg-card focus-visible:outline-none disabled:cursor-not-allowed ${
@@ -109,11 +85,11 @@ const ManageProducts = () => {
                   role="tab"
                   aria-setsize={4}
                   aria-posinset={4}
-                  tabIndex={tabSelected.currentTab === 4 ? 0 : -1}
+                  tabIndex={tabSelected.currentTab === 3 ? 0 : -1}
                   aria-controls="tab-panel-4ai"
-                  aria-selected={tabSelected.currentTab === 4}
+                  aria-selected={tabSelected.currentTab === 3}
                   onClick={() =>
-                    setTabSelected({ ...tabSelected, currentTab: 4 })
+                    setTabSelected({ ...tabSelected, currentTab: 3 })
                   }
                 >
                   <span className="order-2 pt-1.5">LIST PRODUCTS</span>
@@ -142,29 +118,13 @@ const ManageProducts = () => {
                   grain, and one must master it as a whole.
                 </p>
               </div>
-              <div
-                className={`px-6 py-4 ${
-                  tabSelected.currentTab === 3 ? "" : "hidden"
-                }`}
-                id="tab-panel-3ai"
-                aria-selected={tabSelected.currentTab === 3}
-                role="tabpanel"
-                aria-labelledby="tab-label-3ai"
-                tabIndex={-1}
-              >
-                <p>
-                  Even though there is no certainty that the expected results of
-                  our work will manifest, we have to remain committed to our
-                  work and duties; because, even if the results are slated to
-                  arrive, they cannot do so without the performance of work.
-                </p>
-              </div>
+
               <div
                 className={`px-6 py-4 ${
                   tabSelected.currentTab === 4 ? "" : "hidden"
                 }`}
                 id="tab-panel-4ai"
-                aria-selected={tabSelected.currentTab === 4}
+                aria-selected={tabSelected.currentTab === 3}
                 role="tabpanel"
                 aria-labelledby="tab-label-4ai"
                 tabIndex={-1}
