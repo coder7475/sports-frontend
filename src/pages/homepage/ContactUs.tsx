@@ -47,10 +47,10 @@ const ContactUs = () => {
 function EmailInput({
   email,
   setEmail,
-}: {
+}: Readonly<{
   email: string;
   setEmail: (value: string) => void;
-}) {
+}>) {
   return (
     <div className="flex flex-col gap-2">
       <label
@@ -76,10 +76,10 @@ function EmailInput({
 function MessageInput({
   message,
   setMessage,
-}: {
+}: Readonly<{
   message: string;
   setMessage: (value: string) => void;
-}) {
+}>) {
   return (
     <div className="flex flex-col gap-2">
       <label
