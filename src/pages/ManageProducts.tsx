@@ -1,11 +1,11 @@
 import Footer from "@/components/footer/Footer";
-import AddProduct from "@/components/forms/AddProduct/AddProduct";
 import NavBar from "@/components/navbar/Navbar";
 import { useRef, useState } from "react";
 import { IoMdAddCircle } from "react-icons/io";
 import { GrUpdate } from "react-icons/gr";
 import { MdAutoDelete } from "react-icons/md";
 import { FaListAlt } from "react-icons/fa";
+import AddProductPanel from "./ManageProducts/AddProductPanel";
 
 const ManageProducts = () => {
   const [tabSelected, setTabSelected] = useState({
@@ -124,18 +124,7 @@ const ManageProducts = () => {
               </li>
             </ul>
             <div className="w-full ">
-              <div
-                className={`px-6 py-4 ${
-                  tabSelected.currentTab === 1 ? "" : "hidden"
-                }`}
-                id="tab-panel-1ai"
-                aria-selected={tabSelected.currentTab === 1}
-                role="tabpanel"
-                aria-labelledby="tab-label-1ai"
-                tabIndex={-1}
-              >
-                <AddProduct />
-              </div>
+              <AddProductPanel tabSelected={tabSelected} />
               <div
                 className={`px-6 py-4 ${
                   tabSelected.currentTab === 2 ? "" : "hidden"
