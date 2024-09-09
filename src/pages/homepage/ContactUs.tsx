@@ -11,9 +11,6 @@ const ContactUs = () => {
     e.preventDefault();
     setIsSending(true);
 
-    // Simulating an API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
     Toast.fire({
       icon: "success",
       title: "Thank You for contacting us!",
