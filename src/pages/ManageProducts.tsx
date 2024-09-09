@@ -20,7 +20,7 @@ const ManageProducts = () => {
       </section>
 
       <section className="max-w-[1280px] mx-auto mt-3">
-        <h1 className="text-3xl font-bold text-center pt-10">
+        <div className="text-3xl font-bold text-center pt-10">
           <section className="max-w-full" aria-multiselectable="false">
             <ul
               className="flex items-center border-b border-yellow-200"
@@ -77,16 +77,16 @@ const ManageProducts = () => {
               <li className="" role="presentation">
                 <button
                   className={`-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-card hover:stroke-card focus:bg-card focus-visible:outline-none disabled:cursor-not-allowed ${
-                    tabSelected.currentTab === 4
+                    tabSelected.currentTab === 3
                       ? "border-secondary stroke-secondary text-secondary hover:border-card  hover:text-card focus:border-primary focus:stroke-primary focus:text-primary disabled:border-slate-500"
                       : "justify-self-center border-transparent stroke-slate-700 text-slate-700 hover:border-secondary hover:text-secondary focus:border-card focus:stroke-card focus:text-card disabled:text-slate-500"
                   }`}
-                  id="tab-label-4ai"
+                  id="tab-label-3ai"
                   role="tab"
                   aria-setsize={4}
-                  aria-posinset={4}
+                  aria-posinset={3}
                   tabIndex={tabSelected.currentTab === 3 ? 0 : -1}
-                  aria-controls="tab-panel-4ai"
+                  aria-controls="tab-panel-3ai"
                   aria-selected={tabSelected.currentTab === 3}
                   onClick={() =>
                     setTabSelected({ ...tabSelected, currentTab: 3 })
@@ -121,12 +121,12 @@ const ManageProducts = () => {
 
               <div
                 className={`px-6 py-4 ${
-                  tabSelected.currentTab === 4 ? "" : "hidden"
+                  tabSelected.currentTab === 3 ? "" : "hidden"
                 }`}
-                id="tab-panel-4ai"
+                id="tab-panel-3ai"
                 aria-selected={tabSelected.currentTab === 3}
                 role="tabpanel"
-                aria-labelledby="tab-label-4ai"
+                aria-labelledby="tab-label-3ai"
                 tabIndex={-1}
               >
                 <p>
@@ -137,7 +137,7 @@ const ManageProducts = () => {
               </div>
             </div>
           </section>
-        </h1>
+        </div>
       </section>
 
       <section className="max-w-[1280px] mx-auto mt-3">
