@@ -5,11 +5,12 @@ import { useRef, useState } from "react";
 import { IoMdAddCircle } from "react-icons/io";
 import { GrUpdate } from "react-icons/gr";
 import { MdAutoDelete } from "react-icons/md";
+import { FaListAlt } from "react-icons/fa";
 
 const ManageProducts = () => {
   const [tabSelected, setTabSelected] = useState({
-    currentTab: 1,
-    noTabs: 3,
+    currentTab: 4,
+    noTabs: 4,
   });
   const wrapperRef = useRef(null);
 
@@ -36,13 +37,11 @@ const ManageProducts = () => {
                   }`}
                   id="tab-label-1ai"
                   role="tab"
-                  aria-setsize="3"
-                  aria-posinset="1"
-                  tabIndex={tabSelected.currentTab === 2 ? 0 : -1}
+                  aria-setsize={4}
+                  aria-posinset={1}
+                  tabIndex={tabSelected.currentTab === 1 ? 0 : -1}
                   aria-controls="tab-panel-1ai"
-                  aria-selected={`${
-                    tabSelected.currentTab === 1 ? "true" : "false"
-                  }`}
+                  aria-selected={tabSelected.currentTab === 1}
                   onClick={() =>
                     setTabSelected({ ...tabSelected, currentTab: 1 })
                   }
@@ -62,13 +61,11 @@ const ManageProducts = () => {
                   }`}
                   id="tab-label-2ai"
                   role="tab"
-                  aria-setsize="3"
-                  aria-posinset="2"
+                  aria-setsize={4}
+                  aria-posinset={2}
                   tabIndex={tabSelected.currentTab === 2 ? 0 : -1}
                   aria-controls="tab-panel-2ai"
-                  aria-selected={`${
-                    tabSelected.currentTab === 2 ? "true" : "false"
-                  }`}
+                  aria-selected={tabSelected.currentTab === 2}
                   onClick={() =>
                     setTabSelected({ ...tabSelected, currentTab: 2 })
                   }
@@ -86,13 +83,11 @@ const ManageProducts = () => {
                   }`}
                   id="tab-label-3ai"
                   role="tab"
-                  aria-setsize="3"
-                  aria-posinset="3"
-                  tabIndex={tabSelected.currentTab === 2 ? 0 : -1}
+                  aria-setsize={4}
+                  aria-posinset={3}
+                  tabIndex={tabSelected.currentTab === 3 ? 0 : -1}
                   aria-controls="tab-panel-3ai"
-                  aria-selected={`${
-                    tabSelected.currentTab === 3 ? "true" : "false"
-                  }`}
+                  aria-selected={tabSelected.currentTab === 3}
                   onClick={() =>
                     setTabSelected({ ...tabSelected, currentTab: 3 })
                   }
@@ -103,6 +98,30 @@ const ManageProducts = () => {
                   </span>
                 </button>
               </li>
+              <li className="" role="presentation">
+                <button
+                  className={`-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-card hover:stroke-card focus:bg-card focus-visible:outline-none disabled:cursor-not-allowed ${
+                    tabSelected.currentTab === 4
+                      ? "border-secondary stroke-secondary text-secondary hover:border-card  hover:text-card focus:border-primary focus:stroke-primary focus:text-primary disabled:border-slate-500"
+                      : "justify-self-center border-transparent stroke-slate-700 text-slate-700 hover:border-secondary hover:text-secondary focus:border-card focus:stroke-card focus:text-card disabled:text-slate-500"
+                  }`}
+                  id="tab-label-4ai"
+                  role="tab"
+                  aria-setsize={4}
+                  aria-posinset={4}
+                  tabIndex={tabSelected.currentTab === 4 ? 0 : -1}
+                  aria-controls="tab-panel-4ai"
+                  aria-selected={tabSelected.currentTab === 4}
+                  onClick={() =>
+                    setTabSelected({ ...tabSelected, currentTab: 4 })
+                  }
+                >
+                  <span className="order-2 pt-1.5">LIST PRODUCTS</span>
+                  <span className="relative only:-mx-6">
+                    <FaListAlt className="text-xl" />
+                  </span>
+                </button>
+              </li>
             </ul>
             <div className="w-full ">
               <div
@@ -110,9 +129,7 @@ const ManageProducts = () => {
                   tabSelected.currentTab === 1 ? "" : "hidden"
                 }`}
                 id="tab-panel-1ai"
-                aria-selected={`${
-                  tabSelected.currentTab === 1 ? "true" : "false"
-                }`}
+                aria-selected={tabSelected.currentTab === 1}
                 role="tabpanel"
                 aria-labelledby="tab-label-1ai"
                 tabIndex={-1}
@@ -124,9 +141,7 @@ const ManageProducts = () => {
                   tabSelected.currentTab === 2 ? "" : "hidden"
                 }`}
                 id="tab-panel-2ai"
-                aria-selected={`${
-                  tabSelected.currentTab === 2 ? "true" : "false"
-                }`}
+                aria-selected={tabSelected.currentTab === 2}
                 role="tabpanel"
                 aria-labelledby="tab-label-2ai"
                 tabIndex={-1}
@@ -143,9 +158,7 @@ const ManageProducts = () => {
                   tabSelected.currentTab === 3 ? "" : "hidden"
                 }`}
                 id="tab-panel-3ai"
-                aria-selected={`${
-                  tabSelected.currentTab === 3 ? "true" : "false"
-                }`}
+                aria-selected={tabSelected.currentTab === 3}
                 role="tabpanel"
                 aria-labelledby="tab-label-3ai"
                 tabIndex={-1}
@@ -155,6 +168,22 @@ const ManageProducts = () => {
                   our work will manifest, we have to remain committed to our
                   work and duties; because, even if the results are slated to
                   arrive, they cannot do so without the performance of work.
+                </p>
+              </div>
+              <div
+                className={`px-6 py-4 ${
+                  tabSelected.currentTab === 4 ? "" : "hidden"
+                }`}
+                id="tab-panel-4ai"
+                aria-selected={tabSelected.currentTab === 4}
+                role="tabpanel"
+                aria-labelledby="tab-label-4ai"
+                tabIndex={-1}
+              >
+                <p>
+                  This is where you can display a list of all products. You can
+                  add a component or logic here to fetch and display the
+                  products.
                 </p>
               </div>
             </div>
