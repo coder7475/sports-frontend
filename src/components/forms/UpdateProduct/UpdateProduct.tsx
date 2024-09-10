@@ -6,7 +6,9 @@ import { IProduct } from "@/interfaces/product.interface";
 import useAxios from "@/hooks/useAxios";
 import { useEffect, useState } from "react";
 
-const UpdateProduct = ({ tabSelected }) => {
+import { TabSelectedProps } from "@/interfaces/manage.products";
+
+const UpdateProduct = ({ tabSelected }: { tabSelected: TabSelectedProps }) => {
   const {
     register,
     handleSubmit,
