@@ -28,18 +28,18 @@ const ProductForm: React.FC<ProductFormProps> = ({
             htmlFor="name"
             className="block text-start text-lg font-semibold text-card-foreground"
           >
-            Product Name{" "}
+            Product Name
             <input
               type="text"
               id="name"
               {...register("name", {
                 required: "Product Name is required",
               })}
-              className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+              className="mt-1 text-black px-3 py-2 block w-full rounded-md bg-card-foreground border-primary focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
             />
           </label>
           {errors.name && (
-            <Alert variant="destructive">
+            <Alert variant="destructive" className="mt-2">
               <AlertDescription>{errors.name.message}</AlertDescription>
             </Alert>
           )}
@@ -50,18 +50,18 @@ const ProductForm: React.FC<ProductFormProps> = ({
             htmlFor="brand"
             className="block text-start text-lg font-semibold text-card-foreground"
           >
-            Brand{" "}
+            Brand
             <input
               type="text"
               id="brand"
               {...register("brand", {
                 required: "Brand is required",
               })}
-              className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+              className="mt-1 text-black px-3 py-2 block w-full rounded-md bg-card-foreground border-primary focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
             />
           </label>
           {errors.brand && (
-            <Alert variant="destructive">
+            <Alert variant="destructive" className="mt-2">
               <AlertDescription>{errors.brand.message}</AlertDescription>
             </Alert>
           )}
@@ -74,7 +74,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             htmlFor="quantity"
             className="block text-start text-lg font-semibold text-card-foreground"
           >
-            Quantity{" "}
+            Quantity
             <input
               type="number"
               id="quantity"
@@ -85,27 +85,27 @@ const ProductForm: React.FC<ProductFormProps> = ({
                   message: "Quantity must be positive",
                 },
               })}
-              className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+              className="mt-1 text-black px-3 py-2 block w-full rounded-md bg-card-foreground border-primary focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
             />
-            {errors.quantity && (
-              <Alert variant="destructive">
-                <AlertDescription>{errors.quantity.message}</AlertDescription>
-              </Alert>
-            )}
           </label>
+          {errors.quantity && (
+            <Alert variant="destructive" className="mt-2">
+              <AlertDescription>{errors.quantity.message}</AlertDescription>
+            </Alert>
+          )}
         </div>
         <div className="w-full">
           <label
             htmlFor="category"
-            className="block text-start text-lg font-semibold text-card-foreground px-1"
+            className="block text-start text-lg font-semibold text-card-foreground"
           >
-            Category{" "}
+            Category
             <select
               id="category"
               {...register("category", {
                 required: "Category is required",
               })}
-              className="mt-1 text-black p-2 w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+              className="mt-1 text-black px-3 py-2 block w-full rounded-md bg-card-foreground border-primary focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
             >
               <option value="" disabled selected>
                 Select a Category
@@ -150,12 +150,12 @@ const ProductForm: React.FC<ProductFormProps> = ({
                 </option>
               </optgroup>
             </select>
-            {errors.category && (
-              <Alert variant="destructive">
-                <AlertDescription>{errors.category.message}</AlertDescription>
-              </Alert>
-            )}
           </label>
+          {errors.category && (
+            <Alert variant="destructive" className="mt-2">
+              <AlertDescription>{errors.category.message}</AlertDescription>
+            </Alert>
+          )}
         </div>
       </div>
 
@@ -165,7 +165,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             htmlFor="rating"
             className="block text-start text-lg font-semibold text-card-foreground"
           >
-            Rating{" "}
+            Rating
             <input
               type="number"
               id="rating"
@@ -180,14 +180,14 @@ const ProductForm: React.FC<ProductFormProps> = ({
                   message: "Rating must be between 0 and 5",
                 },
               })}
-              className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+              className="mt-1 text-black px-3 py-2 block w-full rounded-md bg-card-foreground border-primary focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
             />
-            {errors.rating && (
-              <Alert variant="destructive">
-                <AlertDescription>{errors.rating.message}</AlertDescription>
-              </Alert>
-            )}
           </label>
+          {errors.rating && (
+            <Alert variant="destructive" className="mt-2">
+              <AlertDescription>{errors.rating.message}</AlertDescription>
+            </Alert>
+          )}
         </div>
 
         <div className="w-full">
@@ -195,7 +195,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             htmlFor="price"
             className="block text-start text-lg font-semibold text-card-foreground"
           >
-            Price{" "}
+            Price
             <input
               type="number"
               id="price"
@@ -206,14 +206,14 @@ const ProductForm: React.FC<ProductFormProps> = ({
                   message: "Price must be positive",
                 },
               })}
-              className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+              className="mt-1 text-black px-3 py-2 block w-full rounded-md bg-card-foreground border-primary focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
             />
-            {errors.price && (
-              <Alert variant="destructive">
-                <AlertDescription>{errors.price.message}</AlertDescription>
-              </Alert>
-            )}
           </label>
+          {errors.price && (
+            <Alert variant="destructive" className="mt-2">
+              <AlertDescription>{errors.price.message}</AlertDescription>
+            </Alert>
+          )}
         </div>
       </div>
 
@@ -222,21 +222,21 @@ const ProductForm: React.FC<ProductFormProps> = ({
           htmlFor="image"
           className="block text-start text-lg font-semibold text-card-foreground"
         >
-          Image URL{" "}
+          Image URL
           <input
             type="text"
             id="image"
             {...register("image", {
               required: "Image URL is required",
             })}
-            className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
+            className="mt-1 text-black px-3 py-2 block w-full rounded-md bg-card-foreground border-primary focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
           />
-          {errors.image && (
-            <Alert variant="destructive">
-              <AlertDescription>{errors.image.message}</AlertDescription>
-            </Alert>
-          )}
         </label>
+        {errors.image && (
+          <Alert variant="destructive" className="mt-2">
+            <AlertDescription>{errors.image.message}</AlertDescription>
+          </Alert>
+        )}
       </div>
 
       <div className="w-full px-8 pt-2">
@@ -245,17 +245,17 @@ const ProductForm: React.FC<ProductFormProps> = ({
           className="block text-start text-lg font-semibold text-card-foreground"
         >
           Description
+          <textarea
+            id="description"
+            {...register("description", {
+              required: "Description is required",
+            })}
+            className="mt-1 text-black px-3 py-2 block w-full rounded-md bg-card-foreground border-primary focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
+            rows={3}
+          ></textarea>
         </label>
-        <textarea
-          id="description"
-          {...register("description", {
-            required: "Description is required",
-          })}
-          className="mt-1 text-black px-1 py-1 block w-full rounded-md bg-card-foreground border-primary focus:border-primary"
-          rows={3}
-        ></textarea>
         {errors.description && (
-          <Alert variant="destructive">
+          <Alert variant="destructive" className="mt-2">
             <AlertDescription>{errors.description.message}</AlertDescription>
           </Alert>
         )}
@@ -264,7 +264,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
       <div className="w-full px-8 pt-2 pb-12">
         <button
           type="submit"
-          className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-base font-semibold text-card bg-secondary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary hover:font-black"
+          className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-semibold text-card bg-secondary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary hover:font-black transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
         >
           Submit
         </button>
