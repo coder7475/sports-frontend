@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { IProduct } from "@/interfaces/product.interface";
 import useAxios from "@/hooks/useAxios";
 import { Button } from "@/components/ui/button";
+import Swal from "sweetalert2";
 
 const ListProducts = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
@@ -10,19 +11,41 @@ const ListProducts = () => {
   const axios = useAxios();
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get<{ data: IProduct[] }>("/products");
-        setProducts(response.data.data);
-        setLoading(false);
-      } catch (err) {
-        setError("Failed to fetch products");
-        setLoading(false);
-      }
-    };
-
     fetchProducts();
   }, [axios]);
+
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get<{ data: IProduct[] }>("/products");
+      setProducts(response.data.data);
+      setLoading(false);
+    } catch (err) {
+      setError("Failed to fetch products");
+      setLoading(false);
+    }
+  };
+
+  const handleDelete = async (id: string) => {
+    try {
+      await Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          await axios.delete(`/products/${id}`);
+          await fetchProducts();
+          Swal.fire("Deleted!", "Your product has been deleted.", "success");
+        }
+      });
+    } catch (err) {
+      Swal.fire("Error!", "Failed to delete the product.", "error");
+    }
+  };
 
   if (loading) return <div className="text-base">Loading...</div>;
   if (error) return <div className="text-base">Error: {error}</div>;
@@ -61,7 +84,11 @@ const ListProducts = () => {
                 <Button variant="outline" size="sm" className="mr-2">
                   Update
                 </Button>
-                <Button variant="destructive" size="sm">
+                <Button
+                  variant="destructive"
+                  size="sm"
+                  onClick={() => handleDelete(product._id)}
+                >
                   Delete
                 </Button>
               </td>
