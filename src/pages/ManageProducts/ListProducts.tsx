@@ -58,7 +58,7 @@ const ListProducts: React.FC<ListProductsProps> = ({ setTabSelected }) => {
 
   const handleUpdate = (productId: string) => {
     // Set the productId in a cookie with a very short expiration
-    document.cookie = `ProductId=${productId}; path=/; max-age=5`; // Cookie expires in 5 seconds
+    document.cookie = `ProductId=${productId}; path=/; max-age=120`; // Cookie expires in 5 seconds
     // set the tab to 2 to go to update form page
     setTabSelected({ currentTab: 2, noTabs: 3 });
   };

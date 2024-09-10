@@ -18,13 +18,13 @@ const UpdateProduct = ({ tabSelected }: { tabSelected: TabSelectedProps }) => {
 
   const axios = useAxios();
   const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     const checkCookie = () => {
       const productId = document.cookie
         .split("; ")
         .find((row) => row.startsWith("ProductId="))
         ?.split("=")[1];
+      console.log(productId);
 
       if (productId) {
         axios.get(`/products/${productId}`).then((res) => {
@@ -43,13 +43,14 @@ const UpdateProduct = ({ tabSelected }: { tabSelected: TabSelectedProps }) => {
   }, [axios, setValue, tabSelected]);
 
   const onSubmit = (data: IProduct) => {
+    console.log("clicked");
     const productId = document.cookie
       .split("; ")
       .find((row) => row.startsWith("ProductId="))
       ?.split("=")[1];
-
+    console.log(productId);
     if (productId) {
-      axios.put(`/products/${productId}`, data).then((res) => {
+      axios.patch(`/products/${productId}`, data).then((res) => {
         if (res?.status === 200) {
           Swal.fire({
             title: "Success",
