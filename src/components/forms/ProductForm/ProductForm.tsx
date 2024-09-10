@@ -1,7 +1,22 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Alert, AlertDescription } from "@/components/ui/alert";
-// @ts-expect-error
-const ProductForm = ({ register, handleSubmit, onSubmit, errors }) => {
+import { UseFormRegister, FieldErrors, SubmitHandler } from "react-hook-form";
+import { IProduct } from "@/interfaces/product.interface";
+
+interface ProductFormProps {
+  register: UseFormRegister<IProduct>;
+  handleSubmit: (
+    onSubmit: SubmitHandler<IProduct>
+  ) => (e?: React.BaseSyntheticEvent) => Promise<void>;
+  onSubmit: SubmitHandler<IProduct>;
+  errors: FieldErrors<IProduct>;
+}
+
+const ProductForm: React.FC<ProductFormProps> = ({
+  register,
+  handleSubmit,
+  onSubmit,
+  errors,
+}) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
