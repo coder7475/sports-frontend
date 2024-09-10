@@ -6,6 +6,7 @@ import { GrUpdate } from "react-icons/gr";
 import { FaListAlt } from "react-icons/fa";
 import AddProductPanel from "./ManageProducts/AddProductPanel";
 import ListProducts from "./ManageProducts/ListProducts";
+import UpdateProduct from "@/components/forms/UpdateProduct/UpdateProduct";
 
 const ManageProducts = () => {
   const [tabSelected, setTabSelected] = useState({
@@ -112,12 +113,7 @@ const ManageProducts = () => {
                 aria-labelledby="tab-label-2ai"
                 tabIndex={-1}
               >
-                <p>
-                  One must be entirely sensitive to the structure of the
-                  material that one is handling. One must yield to it in tiny
-                  details of execution, perhaps the handling of the surface or
-                  grain, and one must master it as a whole.
-                </p>
+                <UpdateProduct />
               </div>
 
               <div

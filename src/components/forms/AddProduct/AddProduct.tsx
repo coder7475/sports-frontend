@@ -38,7 +38,7 @@ const AddProduct = () => {
       handleSubmit={handleSubmit}
       onSubmit={onSubmit}
       errors={errors}
-    ></ProductForm>
+    />
   );
 };
 
