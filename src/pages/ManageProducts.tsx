@@ -113,7 +113,7 @@ const ManageProducts = () => {
                 aria-labelledby="tab-label-2ai"
                 tabIndex={-1}
               >
-                <UpdateProduct />
+                <UpdateProduct tabSelected={tabSelected} />
               </div>
 
               <div

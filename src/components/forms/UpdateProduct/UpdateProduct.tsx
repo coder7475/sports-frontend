@@ -4,9 +4,9 @@ import "@sweetalert2/theme-dark";
 import ProductForm from "../ProductForm/ProductForm";
 import { IProduct } from "@/interfaces/product.interface";
 import useAxios from "@/hooks/useAxios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const UpdateProduct = () => {
+const UpdateProduct = ({ tabSelected }) => {
   const {
     register,
     handleSubmit,
@@ -15,24 +15,30 @@ const UpdateProduct = () => {
   } = useForm<IProduct>();
 
   const axios = useAxios();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const productId = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("ProductId="))
-      ?.split("=")[1];
+    const checkCookie = () => {
+      const productId = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("ProductId="))
+        ?.split("=")[1];
 
-    if (productId) {
-      axios.get(`/products/${productId}`).then((res) => {
-        if (res?.status === 200) {
-          const product = res.data.data;
-          Object.keys(product).forEach((key) => {
-            setValue(key as keyof IProduct, product[key]);
-          });
-        }
-      });
-    }
-  }, [axios, setValue]);
+      if (productId) {
+        axios.get(`/products/${productId}`).then((res) => {
+          if (res?.status === 200) {
+            const product = res.data.data;
+            Object.keys(product).forEach((key) => {
+              setValue(key as keyof IProduct, product[key]);
+            });
+            setIsLoading(false);
+          }
+        });
+      }
+    };
+
+    checkCookie();
+  }, [axios, setValue, tabSelected]);
 
   const onSubmit = (data: IProduct) => {
     const productId = document.cookie
@@ -58,6 +64,10 @@ const UpdateProduct = () => {
       });
     }
   };
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <ProductForm
