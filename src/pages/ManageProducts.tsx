@@ -126,7 +126,10 @@ const ManageProducts = () => {
                 aria-labelledby="tab-label-3ai"
                 tabIndex={-1}
               >
-                <ListProducts setTabSelected={setTabSelected} />
+                <ListProducts
+                  tabSelected={tabSelected}
+                  setTabSelected={setTabSelected}
+                />
               </div>
             </div>
           </section>

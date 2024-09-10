@@ -3,17 +3,14 @@ import { IProduct } from "@/interfaces/product.interface";
 import useAxios from "@/hooks/useAxios";
 import { Button } from "@/components/ui/button";
 import Swal from "sweetalert2";
+import { ListProductsProps } from "@/interfaces/manage.products";
 
 // Update the prop type for setTabSelected
-interface ListProductsProps {
-  setTabSelected: React.Dispatch<
-    React.SetStateAction<{
-      currentTab: number;
-      noTabs: number;
-    }>
-  >;
-}
-const ListProducts: React.FC<ListProductsProps> = ({ setTabSelected }) => {
+
+const ListProducts: React.FC<ListProductsProps> = ({
+  tabSelected,
+  setTabSelected,
+}) => {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -21,7 +18,7 @@ const ListProducts: React.FC<ListProductsProps> = ({ setTabSelected }) => {
 
   useEffect(() => {
     fetchProducts();
-  }, [axios]);
+  }, [axios, tabSelected]);
 
   const fetchProducts = async () => {
     try {
