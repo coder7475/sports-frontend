@@ -10,7 +10,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Rating from "react-rating";
 import NavBar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import { useDispatch } from "react-redux";
@@ -70,6 +69,23 @@ const SingleProduct = () => {
     return <div>Loading...</div>;
   }
 
+  const renderStars = (rating: number) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <span
+          key={i}
+          className={`text-2xl ${
+            i <= rating ? "text-primary" : "text-card-foreground"
+          }`}
+        >
+          ★
+        </span>
+      );
+    }
+    return stars;
+  };
+
   return (
     <>
       <NavBar />
@@ -97,32 +113,8 @@ const SingleProduct = () => {
               <span className="font-bold">Category:</span> {product.category}
             </div>
             <div className="flex items-center">
-              <span className="font-bold mr-2 mb-2">Rating:</span>
-              <Rating
-                placeholderRating={product.rating}
-                emptySymbol={
-                  <img
-                    src="/src/assets/Spark_black.png"
-                    className="icon w-6 h-6"
-                    alt="empty star"
-                  />
-                }
-                placeholderSymbol={
-                  <img
-                    src="/src/assets/Spark.png"
-                    className="icon w-6 h-6"
-                    alt="placeholder"
-                  />
-                }
-                fullSymbol={
-                  <img
-                    src="/src/assets/Spark.png"
-                    className="icon w-6 h-6"
-                    alt="full symbol"
-                  />
-                }
-                readonly
-              />
+              <span className="font-bold mr-2">Rating:</span>
+              <div className="flex">{renderStars(product.rating)}</div>
             </div>
             <CardDescription className="text-lg text-card-foreground">
               {product.description}

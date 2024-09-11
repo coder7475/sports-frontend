@@ -7,11 +7,28 @@ import {
 } from "@/components/ui/card";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
-import Rating from "react-rating";
 import { IProduct } from "@/interfaces/product.interface";
 
 const MyCard = ({ product }: { product: IProduct }) => {
   const navigate = useNavigate();
+
+  const renderStars = (rating: number) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <span
+          key={i}
+          className={`text-2xl ${
+            i <= rating ? "text-primary" : "text-card-foreground"
+          }`}
+        >
+          ★
+        </span>
+      );
+    }
+    return stars;
+  };
+
   return (
     <Card>
       <CardHeader>
@@ -42,33 +59,8 @@ const MyCard = ({ product }: { product: IProduct }) => {
 
         <h4>
           {" "}
-          <span className="font-bold">
-            <Rating
-              placeholderRating={product?.rating}
-              emptySymbol={
-                <img
-                  src="/src/assets/Spark_black.png"
-                  className="icon w-12 h-12"
-                  alt="empty star"
-                />
-              }
-              placeholderSymbol={
-                <img
-                  src="/src/assets/Spark.png"
-                  className="icon w-12 h-12"
-                  alt="placeholder"
-                />
-              }
-              fullSymbol={
-                <img
-                  src="/src/assets/Spark.png"
-                  className="icon w-12 h-12"
-                  alt="full symbol"
-                />
-              }
-              readonly
-            />
-          </span>
+          <span className="font-bold">Rating:</span>{" "}
+          {renderStars(product?.rating)}
         </h4>
 
         <CardDescription className="my-2 text-card-foreground">

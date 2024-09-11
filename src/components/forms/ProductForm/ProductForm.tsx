@@ -165,7 +165,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
             htmlFor="rating"
             className="block text-start text-lg font-semibold text-card-foreground"
           >
-            Rating
+            Rating{" "}
             <input
               type="number"
               id="rating"
