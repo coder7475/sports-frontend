@@ -57,29 +57,21 @@ const AboutUs = () => {
         </h2>
         <div className="flex flex-col lg:flex-row gap-2 justify-center items-center">
           <div className="border-2 rounded-md">
-            <img
-              src="/src/assets/ceo.jpg"
-              alt="ceo"
-              className="w-[500px] h-[400px]"
-            />
+            <img src="/ceo.jpg" alt="ceo" className="w-[500px] h-[400px]" />
             <div className="text-center mt-2">
               <h3 className="font-black text-lg">Adetola Afolabi</h3>
               <h4 className="font-semibold">CEO</h4>
             </div>
           </div>
           <div className="border-2 rounded-md p-2">
-            <img src="/src/assets/cto.jpg" alt="" className="" />
+            <img src="/cto.jpg" alt="" className="" />
             <div className="text-center mt-4">
               <h3 className="font-black text-lg">Robiul Hossain</h3>
               <h4 className="font-semibold">Founder & CTO</h4>
             </div>
           </div>
           <div className="border-2 rounded-md">
-            <img
-              src="/src/assets/coo.jpg"
-              alt=""
-              className="w-[500px] h-[400px]"
-            />
+            <img src="/coo.jpg" alt="" className="w-[500px] h-[400px]" />
             <div className="text-center mt-2">
               <h3 className="font-black text-lg">Sharaddha Kutty</h3>
               <h4 className="font-semibold">COO</h4>
