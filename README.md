@@ -1,7 +1,7 @@
 <div align="center">
   <h1>AccelPro: Empowering Athletes with Innovative Sports Gear</h1>
 </div>
-
+Lazygit
 ---
 
 # AccelPro
